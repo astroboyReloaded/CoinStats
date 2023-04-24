@@ -1,12 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import Logo from '../logo.svg';
 
-const links = [{ path: '/', label: 'Categories' }];
+const links = [{ path: '/', label: 'All Coins' }];
 
 const Nav = () => (
   <nav>
     <div>
-      <img src={Logo} alt="logo" />
       <h1>CoinStats</h1>
     </div>
     <ul>
