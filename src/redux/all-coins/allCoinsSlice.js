@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  allCoins: [],
+  allCoins: 'All Coins',
   isLoading: false,
   error: '',
 };

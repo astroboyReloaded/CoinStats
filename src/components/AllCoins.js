@@ -9,24 +9,34 @@ const AllCoins = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (allCoins.length) return;
+    if (allCoins !== 'All Coins') return;
     dispatch(fetchAllCoins());
   }, [dispatch, allCoins.length]);
 
-  return (
-    <main className="categoriesMain">
-      {isLoading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {allCoins.map((coin) => (
-        <Link to={`coin-details/${coin.id}`} key={coin.id} className="coin">
-          <img src={coin.image} alt={coin.name} />
-          <h2>{coin.name}</h2>
-          <p>{coin.id}</p>
-          <p>{coin.current_price}</p>
-        </Link>
-      ))}
-    </main>
-  );
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>{error}</p>;
+  }
+
+  if (allCoins !== 'All Coins') {
+    return (
+      <main className="categoriesMain">
+        {allCoins.map((coin) => (
+          <Link to={`coin-details/${coin.id}`} key={coin.id} className="coin">
+            <img src={coin.image} alt={coin.name} />
+            <h2>{coin.name}</h2>
+            <p>{coin.id}</p>
+            <p>{coin.current_price}</p>
+          </Link>
+        ))}
+      </main>
+    );
+  }
+
+  return allCoins;
 };
 
 export default AllCoins;
