@@ -1,6 +1,9 @@
 import { NavLink } from 'react-router-dom';
 
-const links = [{ path: '/', label: 'All Coins' }];
+const links = [
+  { path: '/', label: 'Categories' },
+  { path: 'all-coins', label: 'All Coins' },
+];
 
 const Nav = () => (
   <nav>

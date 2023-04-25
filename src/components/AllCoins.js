@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchAllCoins } from '../redux/allCoins/AllCoinsSlice';
+import { Link } from 'react-router-dom';
+import { fetchAllCoins } from '../redux/all-coins/allCoinsSlice';
 
 const AllCoins = () => {
   const { allCoins, isLoading, error } = useSelector((state) => state.allCoins);
@@ -17,12 +18,12 @@ const AllCoins = () => {
       {isLoading && <p>Loading...</p>}
       {error && <p>{error}</p>}
       {allCoins.map((coin) => (
-        <div key={coin.id} className="coin">
+        <Link to={`coin-details/${coin.id}`} key={coin.id} className="coin">
           <img src={coin.image} alt={coin.name} />
           <h2>{coin.name}</h2>
-          <p>{coin.symbol}</p>
+          <p>{coin.id}</p>
           <p>{coin.current_price}</p>
-        </div>
+        </Link>
       ))}
     </main>
   );
