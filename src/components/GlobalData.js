@@ -4,6 +4,7 @@ import {
   fetchGlobalData,
   clearGlobalData,
 } from '../redux/global-data/globalDataSlice';
+import '../styles/GlobalData.css';
 
 const GlobalData = () => {
   const { globalData, isLoading, error } = useSelector(
@@ -25,10 +26,20 @@ const GlobalData = () => {
   if (globalData !== 'Global Data') {
     const { data } = globalData;
     return (
-      <main>
-        <p>{`GLOBAL MARKET CAP: $${data.total_market_cap.usd}`}</p>
-        <p>{`24HR VOLUME: $${data.total_volume.usd}`}</p>
-      </main>
+      <section className="global-data">
+        <p className="global-data-title">
+          GLOBAL MARKET CAP: $
+          <data>
+            {data.total_market_cap.usd.toLocaleString()}
+          </data>
+        </p>
+        <p className="global-data-title">
+          24HR VOLUME: $
+          <data>
+            {data.total_volume.usd.toLocaleString()}
+          </data>
+        </p>
+      </section>
     );
   }
   return <h1>GlobalData</h1>;
