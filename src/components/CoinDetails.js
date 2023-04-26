@@ -41,7 +41,10 @@ const CoinDetails = () => {
       {coin !== 'Coin Details' && (
         <article>
           <header className="coin-header">
-            <data className="coin-price" value={marketData.current_price.usd}>
+            <data
+              className="coin-details-price"
+              value={marketData.current_price.usd}
+            >
               {`$${marketData.current_price.usd.toLocaleString()}`}
             </data>
             <data className="mrkt-cap-chng-perc">{`${marketData.market_cap_change_percentage_24h}%`}</data>
