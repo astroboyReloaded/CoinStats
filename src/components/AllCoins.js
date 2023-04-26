@@ -24,7 +24,6 @@ const AllCoins = () => {
   }
 
   if (allCoins !== 'All Coins') {
-    console.log(allCoins);
     return (
       <main className="categoriesMain">
         <GlobalData />
