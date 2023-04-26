@@ -1,25 +1,28 @@
-// import { useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-// import { fetchGlobalData } from '../redux/global-data/globalDataSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchGlobalData } from '../redux/global-data/globalDataSlice';
 
 const GlobalData = () => {
-  const globalData = 'Global Data';
-  // const { globalData, isLoading, error } = useSelector((state) => state.globalData);
-  // const dispatch = useDispatch();
+  const { globalData, isLoading, error } = useSelector((state) => state.globalData);
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchGlobalData());
-  // }, []);
+  useEffect(() => {
+    dispatch(fetchGlobalData());
+  }, []);
 
-  // if (isLoading) {
-  //   return <p>Loading...</p>;
-  // }
-  // if (error) {
-  //   return <p>Ups! Something went wrong...</p>;
-  // }
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+  if (error) {
+    return <p>Ups! Something went wrong...</p>;
+  }
   if (globalData !== 'Global Data') {
+    const { data } = globalData;
     return (
-      <main />
+      <main>
+        <p>{`GLOBAL MARKET CAP: $${data.total_market_cap.usd}`}</p>
+        <p>{`24HR VOLUME: $${data.total_volume.usd}`}</p>
+      </main>
     );
   }
   return <h1>GlobalData</h1>;

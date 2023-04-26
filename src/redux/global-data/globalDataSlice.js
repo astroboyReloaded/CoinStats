@@ -7,13 +7,14 @@ const initialState = {
 };
 
 export const fetchGlobalData = createAsyncThunk(
-  'global-data/fetchGlobalData',
+  'globalData/fetchGlobalData',
   async (_, { rejectWithValue }) => {
     try {
       const response = await fetch(
         'https://api.coingecko.com/api/v3/global',
       );
-      const globalData = response.json();
+      const globalData = await response.json();
+      console.log(globalData);
       return globalData;
     } catch (e) {
       return rejectWithValue(e.massage);
@@ -22,21 +23,24 @@ export const fetchGlobalData = createAsyncThunk(
 );
 
 const globalDataSlice = createSlice({
-  name: 'global-data',
+  name: 'globalData',
   initialState,
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchGlobalData.pending, (state) => ({
         ...state,
         isLoading: true,
       }))
-      .addCase(fetchGlobalData.rejected, (state, action) => ({
-        ...state,
-        error: action.payload,
-      }))
       .addCase(fetchGlobalData.fulfilled, (state, action) => ({
         ...state,
+        isLoading: false,
         globalData: action.payload,
+      }))
+      .addCase(fetchGlobalData.rejected, (state, action) => ({
+        ...state,
+        isLoading: false,
+        error: action.payload,
       }));
   },
 });

@@ -9,7 +9,7 @@ const store = configureStore({
     allCoins: allCoinsReducer,
     coinDetails: coinDetailsReducer,
     categories: categoriesReducer,
-    globadData: globalDataReducer,
+    globalData: globalDataReducer,
   },
 });
 
