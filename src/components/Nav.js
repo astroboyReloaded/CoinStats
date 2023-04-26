@@ -8,7 +8,8 @@ const links = [
 
 const Nav = () => (
   <nav>
-    <h1>CoinStats</h1>
+    <img className="logo" src="../logo.svg" alt="gecko coin" />
+    <h1 className="app-title">CoinStats</h1>
     <ul className="nav-ul">
       {links.map(({ path, label }) => (
         <li key={path}>
