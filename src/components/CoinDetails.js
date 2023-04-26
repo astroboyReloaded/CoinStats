@@ -29,7 +29,6 @@ const CoinDetails = () => {
     <main>
       {isLoading && <p>...loading</p>}
       {error && <p>Ups! There was an error...</p>}
-      {console.log(coin)}
       {coin !== 'Coin Details' && (
         <article>
           <header>

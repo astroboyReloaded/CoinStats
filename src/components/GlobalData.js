@@ -1,14 +1,20 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchGlobalData } from '../redux/global-data/globalDataSlice';
+import {
+  fetchGlobalData,
+  clearGlobalData,
+} from '../redux/global-data/globalDataSlice';
 
 const GlobalData = () => {
-  const { globalData, isLoading, error } = useSelector((state) => state.globalData);
+  const { globalData, isLoading, error } = useSelector(
+    (state) => state.globalData,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchGlobalData());
-  }, []);
+    return () => dispatch(clearGlobalData());
+  }, [dispatch]);
 
   if (isLoading) {
     return <p>Loading...</p>;

@@ -12,7 +12,7 @@ const AllCoins = () => {
   useEffect(() => {
     if (allCoins !== 'All Coins') return;
     dispatch(fetchAllCoins());
-  }, [dispatch, allCoins.length]);
+  }, [dispatch, allCoins]);
 
   if (isLoading) {
     return <p>Loading...</p>;

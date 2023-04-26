@@ -25,7 +25,6 @@ const Categories = () => {
   if (categories !== 'Categories') {
     return (
       <main>
-        {console.log(categories)}
         {categories.map((category) => (
           <article key={category.id}>
             <h1>{category.name}</h1>
