@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  coinDetails: {},
+  coinDetails: 'Coin Details',
   isLoading: false,
   error: '',
 };
@@ -11,7 +11,7 @@ export const fetchCoinDetails = createAsyncThunk(
   async (id, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `https://api.coingecko.com/api/v3/coins/${id}`,
+        `https://api.coingecko.com/api/v3/coins/${id}/`,
       );
       const coinDetails = await response.json();
       return coinDetails;
@@ -27,7 +27,7 @@ const coinDetailsSlice = createSlice({
   reducers: {
     clearCoinDetails: (state) => ({
       ...state,
-      coinDetails: {},
+      ...initialState,
     }),
   },
   extraReducers: (builder) => {

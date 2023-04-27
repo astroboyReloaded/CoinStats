@@ -32,7 +32,13 @@ const Categories = () => {
               <img key={image} src={image} alt={image} />
             ))}
             <p>
+              <data>{`Market Cap: $${category.market_cap}`}</data>
+            </p>
+            <p>
               <data>{`24h vlume: $ ${category.volume_24h}`}</data>
+            </p>
+            <p>
+              <data>{`MC change 24h: $ ${category.market_cap_change_24h}`}</data>
             </p>
           </article>
         ))}

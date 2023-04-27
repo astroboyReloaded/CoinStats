@@ -1,16 +1,15 @@
 import { NavLink } from 'react-router-dom';
+import '../styles/Nav.css';
 
 const links = [
-  { path: '/', label: 'Categories' },
-  { path: 'all-coins', label: 'All Coins' },
+  { path: '/', label: 'All Coins' },
+  { path: '/categories', label: 'Categories' },
 ];
 
 const Nav = () => (
   <nav>
-    <div>
-      <h1>CoinStats</h1>
-    </div>
-    <ul>
+    <h1>CoinStats</h1>
+    <ul className="nav-ul">
       {links.map(({ path, label }) => (
         <li key={path}>
           <NavLink to={path}>{label}</NavLink>
