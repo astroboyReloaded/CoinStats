@@ -1,15 +1,16 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
+import Categories from './components/Categories';
+import View from './components/View';
+import NoMatch from './components/NoMatch';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>CoinStats</h1>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Routes>
+    <Route path="/" element={<View />}>
+      <Route index element={<Categories />} />
+      <Route path="*" element={<NoMatch />} />
+    </Route>
+  </Routes>
+);
 
 export default App;
