@@ -1,13 +1,20 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 import { fetchAllCoins } from '../redux/all-coins/allCoinsSlice';
 import GlobalData from './GlobalData';
 import '../styles/AllCoins.css';
 
 const AllCoins = () => {
-  const { allCoins, isLoading, error } = useSelector((state) => state.allCoins);
-
+  const {
+    allCoins,
+    results,
+    isLoading,
+    error,
+  } = useSelector(
+    (state) => state.allCoins,
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,10 +31,12 @@ const AllCoins = () => {
   }
 
   if (allCoins !== 'All Coins') {
+    const render = results?.length ? results : allCoins;
     return (
       <main className="categoriesMain">
         <GlobalData />
-        {allCoins.map((coin) => (
+        <SearchBar />
+        {render.map((coin) => (
           <Link to={`coin-details/${coin.id}`} key={coin.id}>
             <article className="coin">
               <data className="rank">{coin.market_cap_rank}</data>

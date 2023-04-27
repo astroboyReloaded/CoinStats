@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   allCoins: 'All Coins',
+  search: '',
+  results: [],
   isLoading: false,
   error: '',
 };
@@ -24,7 +26,13 @@ export const fetchAllCoins = createAsyncThunk(
 const allCoinsSlice = createSlice({
   name: 'allCoins',
   initialState,
-  reducers: {},
+  reducers: {
+    setSearch: (state, action) => ({
+      ...state,
+      search: action.payload.search,
+      results: action.payload.results,
+    }),
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAllCoins.pending, (state) => ({
@@ -43,5 +51,7 @@ const allCoinsSlice = createSlice({
       }));
   },
 });
+
+export const { setSearch } = allCoinsSlice.actions;
 
 export default allCoinsSlice.reducer;
