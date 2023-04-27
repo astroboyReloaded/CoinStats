@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchCategories } from '../redux/categories/categoriesSlice';
+import '../styles/Categories.css';
 
 const Categories = () => {
   const { categories, isLoading, error } = useSelector(
@@ -24,13 +25,15 @@ const Categories = () => {
 
   if (categories !== 'Categories') {
     return (
-      <main>
+      <main className="categories-main">
         {categories.map((category) => (
-          <article key={category.id}>
-            <h1>{category.name}</h1>
-            {category.top_3_coins.map((image) => (
-              <img key={image} src={image} alt={image} />
-            ))}
+          <article key={category.id} className="category">
+            <h1 className="category-name">{category.name}</h1>
+            <div>
+              {category.top_3_coins.map((image) => (
+                <img key={image} src={image} alt={image} />
+              ))}
+            </div>
             <p>
               <data>{`Market Cap: $${category.market_cap}`}</data>
             </p>

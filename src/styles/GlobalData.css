@@ -1,0 +1,9 @@
+.global-data {
+  display: flex;
+}
+
+.global-data-title {
+  font-size: 0.72rem;
+  text-align: left;
+  padding-inline: 0.3rem;
+}

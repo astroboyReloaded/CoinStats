@@ -1,0 +1,16 @@
+.coin-main {
+  padding: 0.3rem;
+}
+
+.coin-header {
+  flex-direction: row;
+}
+
+.coin-details-price {
+  font-size: 2.1rem;
+  width: fit-content;
+}
+
+.mrkt-cap-chng-perc {
+  width: fit-content;
+}
