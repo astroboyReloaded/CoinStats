@@ -10,7 +10,11 @@ import '../styles/CoinDetails.css';
 
 const CoinDetails = () => {
   const { id } = useParams();
-  const { coinDetails, isLoading, error } = useSelector(
+  const {
+    coinDetails,
+    isLoading,
+    error,
+  } = useSelector(
     (state) => state.coinDetails,
   );
 
