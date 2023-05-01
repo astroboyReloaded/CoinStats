@@ -25,13 +25,6 @@ const coinDetailsSlice = createSlice({
   name: 'coinDetails',
   initialState,
   reducers: {
-    setAllCoinsPrices: (state, action) => {
-      console.log(action.payload, 'action-SetAllCoinsPrices');
-      return ({
-        ...state,
-        allCoinsPrices: action.payload,
-      });
-    },
     clearCoinDetails: (state) => ({
       ...state,
       ...initialState,
@@ -56,6 +49,6 @@ const coinDetailsSlice = createSlice({
   },
 });
 
-export const { setAllCoinsPrices, clearCoinDetails } = coinDetailsSlice.actions;
+export const { clearCoinDetails } = coinDetailsSlice.actions;
 
 export default coinDetailsSlice.reducer;
