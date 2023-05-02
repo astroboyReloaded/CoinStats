@@ -1,40 +1,34 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
+import useConvertion from '../hooks/useConvertion';
 
 const PriceConvertion = () => {
   const { symbol, image, currentPrices } = useSelector(
     (state) => state.priceConvertion.coinInFilter,
   );
 
-  const [thisCoinAmount, setThisCoinAmount] = useState(1);
-  const [exchangeRate, setExchangeRate] = useState(0);
-  const [exchangeAmount, setExchangeAmount] = useState(0);
+  const [
+    thisCoinAmount,
+    exchangeAmount,
+    handleThisCoinAmount,
+    handleExchangeAmount,
+    handleExchangeRate,
+  ] = useConvertion(currentPrices);
 
-  useLayoutEffect(() => {
-    const exRate = currentPrices?.usd;
-    setExchangeRate(exRate);
-  }, [currentPrices]);
+  // replace 00 for 0 or 0[1-9] for [1-9] (with help from Copilot  :D)
+  const cleanValue = (value) => {
+    const regex = /(^0{2})|(^0[1-9])/;
+    const stringValue = value.toString(); // <-- Idea adapted from GPT propmpt result
+    return stringValue.replace(regex, (match) => match[match.length - 1]);
+  };
 
-  useLayoutEffect(() => {
-    const exAmount = exchangeRate * thisCoinAmount;
-    setExchangeAmount(exAmount);
-  }, [exchangeRate]);
-
-  useEffect(() => {
-    const exRate = thisCoinAmount * exchangeRate;
-    setExchangeAmount(exRate);
-  }, [thisCoinAmount]);
-
-  useEffect(() => {
-    const thisAmount = exchangeAmount / exchangeRate;
-    setThisCoinAmount(thisAmount);
-  }, [exchangeAmount]);
-
-  const handleExRate = (symbol) => {
-    console.log(symbol);
-    const exRate = currentPrices[symbol.toLowerCase()];
-    console.log(exRate);
-    setExchangeRate(exRate);
+  const handleValue = (e, handleWith) => {
+    const amount = parseFloat(e.target.value);
+    if (Number.isNaN(amount)) {
+      handleWith(0);
+    } else {
+      handleWith(amount);
+    }
   };
 
   return (
@@ -43,8 +37,8 @@ const PriceConvertion = () => {
         <input
           id="thisCoinAmount"
           type="number"
-          value={thisCoinAmount}
-          onInput={(e) => setThisCoinAmount(parseFloat(e.target.value))}
+          value={cleanValue(thisCoinAmount)}
+          onInput={(e) => handleValue(e, handleThisCoinAmount)}
         />
         <img src={image} alt="" />
         {symbol?.toUpperCase()}
@@ -55,8 +49,10 @@ const PriceConvertion = () => {
         <input
           type="number"
           id="exAmount"
-          value={exchangeAmount}
-          onInput={(e) => setExchangeAmount(parseFloat(e.target.value))}
+          value={cleanValue(exchangeAmount)}
+          onInput={(e) => (Number.isNaN(parseFloat(e.target.value))
+            ? handleExchangeAmount(parseFloat(0))
+            : handleExchangeAmount(parseFloat(e.target.value)))}
         />
       </label>
       <label
@@ -64,7 +60,7 @@ const PriceConvertion = () => {
       >
         <select
           id="currencies"
-          onChange={(e) => handleExRate(e.target.value)}
+          onChange={(e) => handleExchangeRate(e.target.value)}
         >
           {currentPrices && Object.keys(currentPrices).map((symbol) => (
             <option
