@@ -149,7 +149,8 @@ Feel free to check the [issues page](../../issues/).
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-> I would like to thank [Microverse](https://www.microverse.org/) for teaching me these tools.
+ I would like to thank [Microverse](https://www.microverse.org/) for teaching me these tools, my teammates who share great advice, and Copilot and Chat GPT
+for unexperienced topics handlable (used for lines 18-23 of PriceConvertion.js).
 
 <!-- LICENSE -->
 
