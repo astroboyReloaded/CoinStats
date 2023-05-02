@@ -6,11 +6,17 @@ import {
   fetchCoinDetails,
   clearCoinDetails,
 } from '../redux/coin-details/coinDetailsSlice';
+import PriceConvertion from './PriceConvertion';
 import '../styles/CoinDetails.css';
+import useSetThisCoinInFilter from '../hooks/useSetThisCoinInFilter';
 
 const CoinDetails = () => {
   const { id } = useParams();
-  const { coinDetails, isLoading, error } = useSelector(
+  const {
+    coinDetails,
+    isLoading,
+    error,
+  } = useSelector(
     (state) => state.coinDetails,
   );
 
@@ -22,6 +28,8 @@ const CoinDetails = () => {
       dispatch(clearCoinDetails());
     };
   }, [dispatch, id]);
+
+  useSetThisCoinInFilter(coinDetails);
 
   const coin = coinDetails;
 
@@ -47,11 +55,12 @@ const CoinDetails = () => {
               {`$${marketData.current_price.usd.toLocaleString()}`}
             </data>
             <data className="mrkt-cap-chng-perc">{`${marketData.market_cap_change_percentage_24h}%`}</data>
+            <PriceConvertion />
           </header>
           <main>
             <div>
               <img src={image.small} alt={name} />
-              <h2>{symbol}</h2>
+              <h2>{symbol?.toUpperCase()}</h2>
             </div>
             {parser(description.en)}
           </main>
