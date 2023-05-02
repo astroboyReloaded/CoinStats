@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import parser from 'html-react-parser';
 import {
   fetchCoinDetails,
@@ -48,6 +48,7 @@ const CoinDetails = () => {
       {coin !== 'Coin Details' && (
         <article>
           <header className="coin-header">
+            <Link to="/">back</Link>
             <data
               className="coin-details-price"
               value={marketData.current_price.usd}
