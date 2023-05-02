@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import { fetchAllCoins } from '../redux/all-coins/allCoinsSlice';
+import { setupTop100 } from '../redux/price-convertion/priceConvertionSlice';
 import GlobalData from './GlobalData';
 import '../styles/AllCoins.css';
 
@@ -22,6 +23,15 @@ const AllCoins = () => {
     dispatch(fetchAllCoins());
   }, [dispatch, allCoins]);
 
+  const handleSetTop100CoinsPrices = () => {
+    const convertionCurrencies = allCoins.map((coin) => ({
+      image: coin.image,
+      symbol: coin.symbol,
+      price: coin.current_price,
+    }));
+    dispatch(setupTop100(convertionCurrencies));
+  };
+
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -37,7 +47,7 @@ const AllCoins = () => {
         <GlobalData />
         <SearchBar />
         {render.map((coin) => (
-          <Link to={`coin-details/${coin.id}`} key={coin.id}>
+          <Link to={`coin-details/${coin.id}`} onClick={handleSetTop100CoinsPrices} key={coin.id}>
             <article className="coin">
               <data className="rank">{coin.market_cap_rank}</data>
               <header>
