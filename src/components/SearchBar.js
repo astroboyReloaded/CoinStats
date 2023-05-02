@@ -8,10 +8,10 @@ const SearchBar = () => {
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    const search = e.target.value.toLowerCase();
+    const search = e.target.value;
     const results = data.filter((item) => (
-      item.id.indexOf(search) > -1
-      || item.symbol.indexOf(search) > -1));
+      item.id.indexOf(search.toLowerCase()) > -1
+      || item.symbol.indexOf(search.toLowerCase()) > -1));
     const searchResults = {
       search,
       results,
