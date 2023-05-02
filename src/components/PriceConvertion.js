@@ -50,9 +50,7 @@ const PriceConvertion = () => {
           type="number"
           id="exAmount"
           value={cleanValue(exchangeAmount)}
-          onInput={(e) => (Number.isNaN(parseFloat(e.target.value))
-            ? handleExchangeAmount(parseFloat(0))
-            : handleExchangeAmount(parseFloat(e.target.value)))}
+          onInput={(e) => handleValue(e, handleExchangeAmount)}
         />
       </label>
       <label
