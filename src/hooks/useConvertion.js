@@ -15,7 +15,8 @@ const useConvertion = (prices) => {
   useLayoutEffect(() => {
     const exAmount = exchangeRate * thisCoinAmount;
     setExchangeAmount(fixFloat(exAmount));
-  }, [exchangeRate, thisCoinAmount]);
+    // eslint-disable-next-line
+  }, [exchangeRate]); // Disabled because this Effect should NOT be triggered when thisCoinAmount changes.
 
   const handleThisCoinAmount = (value) => {
     setThisCoinAmount(value);
