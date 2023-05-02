@@ -27,7 +27,7 @@ const SearchBar = () => {
       results: [],
     }));
   };
-  console.log(search);
+
   return (
     <form onSubmit={handleSubmit}>
       <input

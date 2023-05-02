@@ -1,4 +1,4 @@
-import { useCallback, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 const fixFloat = (amount) => (parseFloat(amount.toFixed(8)));
 
@@ -15,26 +15,26 @@ const useConvertion = (prices) => {
   useLayoutEffect(() => {
     const exAmount = exchangeRate * thisCoinAmount;
     setExchangeAmount(fixFloat(exAmount));
-  }, [exchangeRate]);
+  }, [exchangeRate, thisCoinAmount]);
 
-  const handleThisCoinAmount = useCallback((value) => {
+  const handleThisCoinAmount = (value) => {
     setThisCoinAmount(value);
     const exAmount = value * exchangeRate;
     setExchangeAmount(fixFloat(exAmount));
-  });
+  };
 
-  const handleExchangeAmount = useCallback((value) => {
-    setExchangeAmount(fixFloat(value));
+  const handleExchangeAmount = (value) => {
+    setExchangeAmount(value);
     const thisAmount = value / exchangeRate;
     setThisCoinAmount(fixFloat(thisAmount));
-  });
+  };
 
-  const handleExchangeRate = useCallback((symbol) => {
+  const handleExchangeRate = (symbol) => {
     const exRate = prices[symbol.toLowerCase()];
     setExchangeRate(exRate);
     const exAmount = exRate * thisCoinAmount;
     setExchangeAmount(fixFloat(exAmount));
-  });
+  };
 
   return [
     thisCoinAmount,
