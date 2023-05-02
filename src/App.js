@@ -10,10 +10,10 @@ const App = () => (
   <Routes>
     <Route path="/" element={<View />}>
       <Route index element={<AllCoins />} />
-      <Route path="/coin-details/:id" element={<CoinDetails />} />
       <Route path="/categories" element={<Categories />} />
       <Route path="*" element={<NoMatch />} />
     </Route>
+    <Route path="/coin-details/:id" element={<CoinDetails />} />
   </Routes>
 );
 
