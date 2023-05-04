@@ -27,7 +27,7 @@ const GlobalData = () => {
     const { data } = globalData;
     return (
       <section className="global-data">
-        <p className="global-data-title">
+        <p className="global-data-title marketCap">
           GLOBAL MARKET CAP: $
           <data>
             {data.total_market_cap.usd.toLocaleString()}

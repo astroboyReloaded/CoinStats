@@ -1,0 +1,8 @@
+.searchContainer {
+  text-align: center;
+}
+
+.searchBar {
+  border-radius: 9px;
+  border: 2px solid yellowgreen;
+}

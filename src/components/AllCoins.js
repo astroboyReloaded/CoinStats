@@ -41,7 +41,7 @@ const AllCoins = () => {
   }
 
   if (allCoins !== 'All Coins') {
-    const render = results?.length ? results : allCoins;
+    const render = results === null ? allCoins : results;
     return (
       <main className="categoriesMain">
         <GlobalData />
