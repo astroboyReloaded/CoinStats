@@ -1,5 +1,7 @@
 .global-data {
   display: flex;
+  color: gainsboro;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .global-data-title {
