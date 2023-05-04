@@ -35,14 +35,17 @@ const Categories = () => {
               ))}
             </div>
             <p>
-              <data>{`Market Cap: $${category.market_cap}`}</data>
+              Market Cap:
             </p>
+            <data>{`$${category.market_cap}`}</data>
             <p>
-              <data>{`24h vlume: $ ${category.volume_24h}`}</data>
+              24h vlume:
             </p>
+            <data>{`$${category.volume_24h}`}</data>
             <p>
-              <data>{`MC change 24h: $ ${category.market_cap_change_24h}`}</data>
+              MC change 24h:
             </p>
+            <data>{`$${category.market_cap_change_24h}`}</data>
           </article>
         ))}
       </main>

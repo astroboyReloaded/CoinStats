@@ -7,13 +7,14 @@
 .category {
   width: calc(50% - 0.6rem - 2px);
   margin: -1px -1px 0 0;
-  border: 1px solid black;
+  border: 1px solid goldenrod;
   padding: 0.3rem;
   text-align: center;
 }
 
 .category-name {
   font-size: 1rem;
+  color: goldenrod;
 }
 
 img {
@@ -22,4 +23,9 @@ img {
 
 p {
   margin: 0;
+  color: gainsboro;
+}
+
+data {
+  color: goldenrod;
 }
