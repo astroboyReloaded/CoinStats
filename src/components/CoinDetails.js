@@ -49,21 +49,80 @@ const CoinDetails = () => {
         <article>
           <header className="coin-header">
             <Link to="/">back</Link>
-            <data
-              className="coin-details-price"
-              value={marketData.current_price.usd}
-            >
-              {`$${marketData.current_price.usd.toLocaleString()}`}
-            </data>
-            <data className="mrkt-cap-chng-perc">{`${marketData.market_cap_change_percentage_24h}%`}</data>
-            <PriceConvertion />
+            <img src={image.small} alt={name} />
+            <h1>{name}</h1>
+            <h2>{`(${symbol?.toUpperCase()})`}</h2>
           </header>
-          <main>
-            <div>
-              <img src={image.small} alt={name} />
-              <h2>{symbol?.toUpperCase()}</h2>
-            </div>
-            {parser(description.en)}
+          <main className="coin-main-section">
+            <section>
+              <data
+                className="coin-details-price"
+                value={marketData.current_price.usd}
+              >
+                {`$${marketData.current_price.usd.toLocaleString()}`}
+              </data>
+              <data className="mrkt-cap-chng-perc">{`${marketData.market_cap_change_percentage_24h}%`}</data>
+              <PriceConvertion />
+            </section>
+            <section className="priceChange-percentages">
+              <table>
+                <thead>
+                  <tr>
+                    <th>24H</th>
+                    <th>7D</th>
+                    <th>14D</th>
+                    <th>30D</th>
+                    <th>60D</th>
+                    <th>1Y</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{marketData.price_change_percentage_24h}</td>
+                    <td>{marketData.price_change_percentage_7d}</td>
+                    <td>{marketData.price_change_percentage_14d}</td>
+                    <td>{marketData.price_change_percentage_30d}</td>
+                    <td>{marketData.price_change_percentage_60d}</td>
+                    <td>{marketData.price_change_percentage_1y}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section>
+              <table className="coin-MainData">
+                <thead>
+                  <tr className="coin-MainData-Titles">
+                    <th>Market Cap Rank</th>
+                    <th>Market Cap</th>
+                    <th>Fully Diluted Valuation</th>
+                    <th>Trading Volume</th>
+                    <th>2H High</th>
+                    <th>2H Low</th>
+                    <th>Circulating Supply</th>
+                    <th>Total Supply</th>
+                    <th>Max Supply</th>
+                    <th>All-Time High</th>
+                    <th>All-Time Low</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="coin-MainData-Values">
+                    <td>{marketData.market_cap_rank}</td>
+                    <td>{marketData.market_cap?.usd}</td>
+                    <td>{marketData.fully_diluted_valuation?.usd}</td>
+                    <td>{marketData.total_volume?.usd}</td>
+                    <td>{marketData.high_24h?.usd}</td>
+                    <td>{marketData.low_24h?.usd}</td>
+                    <td>{marketData.circulating_supply}</td>
+                    <td>{marketData.total_supply}</td>
+                    <td>{marketData.max_supply}</td>
+                    <td>{marketData.ath?.usd}</td>
+                    <td>{marketData.atl?.usd}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <p>{parser(description.en)}</p>
           </main>
         </article>
       )}
