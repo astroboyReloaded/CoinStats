@@ -48,10 +48,10 @@ const CoinDetails = () => {
       {coin !== 'Coin Details' && (
         <article>
           <header className="coin-header">
-            <Link to="/">back</Link>
-            <img src={image.small} alt={name} />
-            <h1>{name}</h1>
-            <h2>{`(${symbol?.toUpperCase()})`}</h2>
+            <Link className="arrow-back" to="/" />
+            <img className="header-coin-image" src={image.small} alt={name} />
+            <h1 className="coin-name">{name}</h1>
+            <h2 className="coin-symbol">{`(${symbol?.toUpperCase()})`}</h2>
           </header>
           <main className="coin-main-section">
             <section>
@@ -122,7 +122,7 @@ const CoinDetails = () => {
                 </tbody>
               </table>
             </section>
-            <p>{parser(description.en)}</p>
+            <p className="coin-description">{parser(description.en)}</p>
           </main>
         </article>
       )}
