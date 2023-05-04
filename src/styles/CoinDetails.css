@@ -73,10 +73,6 @@
   font-size: 0.6rem;
 }
 
-.coin-MainData {
-  display: flex;
-}
-
 .priceChange-percentages {
   margin-block: 0.3rem;
   background-color: #20223f;
@@ -106,10 +102,43 @@
   font-size: 0.66rem;
 }
 
-.coin-MainData-Titles,
-.coin-MainData-Values {
+.coin-MainData {
   display: flex;
-  flex-direction: column;
+  margin-block: 0.3rem;
+  background-color: #20223f;
+  border-radius: 6px;
+  padding: 0.3rem;
+  justify-content: space-between;
+}
+
+.con-min-data-thead-tbody{
+  width: 50%;
+}
+
+.coin-MainData-tr {
+  display: flex;
+  flex-direction: column;font-size: 0.81rem;
+}
+
+.coinMD-th,
+.coinMD-td {
+  min-height: 1rem;
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid rgb(108, 108, 108);
+}
+
+.coinMD-th {
+  justify-content: left;
+}
+
+.coinMD-td {
+  justify-content: right;
+}
+
+.coinMD-th:last-child,
+.coinMD-td:last-child {
+  border-bottom: none;
 }
 
 a {

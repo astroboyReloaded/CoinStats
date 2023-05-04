@@ -90,34 +90,62 @@ const CoinDetails = () => {
             </section>
             <section>
               <table className="coin-MainData">
-                <thead>
-                  <tr className="coin-MainData-Titles">
-                    <th>Market Cap Rank</th>
-                    <th>Market Cap</th>
-                    <th>Fully Diluted Valuation</th>
-                    <th>Trading Volume</th>
-                    <th>2H High</th>
-                    <th>2H Low</th>
-                    <th>Circulating Supply</th>
-                    <th>Total Supply</th>
-                    <th>Max Supply</th>
-                    <th>All-Time High</th>
-                    <th>All-Time Low</th>
+                <thead className="con-min-data-thead-tbody">
+                  <tr className="coin-MainData-tr">
+                    <th className="coinMD-th">Market Cap Rank</th>
+                    <th className="coinMD-th">Market Cap</th>
+                    <th className="coinMD-th">Fully Diluted Valuation</th>
+                    <th className="coinMD-th">Trading Volume</th>
+                    <th className="coinMD-th">2H High</th>
+                    <th className="coinMD-th">2H Low</th>
+                    <th className="coinMD-th">Circulating Supply</th>
+                    <th className="coinMD-th">Total Supply</th>
+                    <th className="coinMD-th">Max Supply</th>
+                    <th className="coinMD-th">All-Time High</th>
+                    <th className="coinMD-th">All-Time Low</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr className="coin-MainData-Values">
-                    <td>{marketData.market_cap_rank}</td>
-                    <td>{marketData.market_cap?.usd}</td>
-                    <td>{marketData.fully_diluted_valuation?.usd}</td>
-                    <td>{marketData.total_volume?.usd}</td>
-                    <td>{marketData.high_24h?.usd}</td>
-                    <td>{marketData.low_24h?.usd}</td>
-                    <td>{marketData.circulating_supply}</td>
-                    <td>{marketData.total_supply}</td>
-                    <td>{marketData.max_supply}</td>
-                    <td>{marketData.ath?.usd}</td>
-                    <td>{marketData.atl?.usd}</td>
+                <tbody className="con-min-data-thead-tbody">
+                  <tr className="coin-MainData-tr">
+                    <td className="coinMD-td">
+                      #
+                      {marketData.market_cap_rank}
+                    </td>
+                    <td className="coinMD-td">
+                      $
+                      {marketData.market_cap?.usd.toLocaleString()}
+                    </td>
+                    <td className="coinMD-td">
+                      $
+                      {marketData.fully_diluted_valuation?.usd?.toLocaleString()}
+                    </td>
+                    <td className="coinMD-td">
+                      $
+                      {marketData.total_volume?.usd.toLocaleString()}
+                    </td>
+                    <td className="coinMD-td">
+                      $
+                      {marketData.high_24h?.usd.toFixed(8)}
+                    </td>
+                    <td className="coinMD-td">
+                      $
+                      {marketData.low_24h?.usd.toFixed(8)}
+                    </td>
+                    <td className="coinMD-td">
+                      {marketData.circulating_supply?.toLocaleString()}
+                    </td>
+                    <td className="coinMD-td">
+                      {marketData.total_supply?.toLocaleString()}
+                    </td>
+                    <td className="coinMD-td">{marketData.max_supply?.toLocaleString()}</td>
+                    <td className="coinMD-td">
+                      $
+                      {marketData.ath?.usd.toLocaleString()}
+                    </td>
+                    <td className="coinMD-td">
+                      $
+                      {marketData.atl?.usd.toLocaleString()}
+                    </td>
                   </tr>
                 </tbody>
               </table>
