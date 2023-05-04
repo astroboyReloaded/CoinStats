@@ -54,16 +54,16 @@ const CoinDetails = () => {
             <h2 className="coin-symbol">{`(${symbol?.toUpperCase()})`}</h2>
           </header>
           <main className="coin-main-section">
-            <section>
+            <section className="coin-price-section">
               <data
                 className="coin-details-price"
                 value={marketData.current_price.usd}
               >
                 {`$${marketData.current_price.usd.toLocaleString()}`}
               </data>
-              <data className="mrkt-cap-chng-perc">{`${marketData.market_cap_change_percentage_24h}%`}</data>
-              <PriceConvertion />
+              <data className={`mrkt-cap-chng-perc ${marketData.market_cap_change_percentage_24h > 0 ? 'green' : 'red'}`}>{`${marketData.market_cap_change_percentage_24h.toFixed(2).replace('-', '')}%`}</data>
             </section>
+            <PriceConvertion />
             <section className="priceChange-percentages">
               <table>
                 <thead>
