@@ -2,56 +2,65 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.coin {
+.coin-table {
+  margin-top: 0.3rem;
+  display: flex;
+  flex-direction: column;
   color: goldenrod;
 }
 
-data {
-  align-self: center;
+.head-tr {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: 0.3rem;
+  font-size: 0.72rem;
+}
+
+.coin-tbody {
+  display: flex;
+  flex-direction: column;
+  margin-inline: 0.3rem;
   font-size: 0.81rem;
-  text-align: right;
+}
+
+.body-tr {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem 0;
+  align-items: center;
+  color: gainsboro;
+  border-bottom: 1px solid goldenrod;
 }
 
 .rank {
   min-width: 1.2rem;
+  text-align: left;
 }
 
-header {
-  width: 1.8rem;
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.coin {
-  display: flex;
-  padding: 0.3rem;
-  justify-content: space-between;
-}
-
-.coin-img {
-  width: 1.2rem;
-}
-
-.coin-symbol {
-  margin: 0;
-  font-size: 0.6rem;
-}
-
-section {
-  margin-inline: 0.3rem;
-  display: inline-flex;
+.coin-td {
+  min-width: 3rem;
   text-align: center;
 }
 
-.coin-price {
-  width: 18vw;
+.coin-img {
+  max-width: 1rem;
 }
 
-.prc-chng-perc {
-  width: 9vw;
+.coin-symbol {
+  font-size: 0.6rem;
+  margin: 0;
 }
 
-.coin-mrkt-cap {
-  width: 30vw;
+.price-td {
+  min-width: 4rem;
+  text-align: right;
+}
+
+.perc-24h-td {
+  min-width: 3rem;
+  text-align: right;
+}
+
+.mrkt-cap-td {
+  min-width: 6rem;text-align: right;
 }

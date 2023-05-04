@@ -46,26 +46,43 @@ const AllCoins = () => {
       <main className="categoriesMain">
         <GlobalData />
         <SearchBar />
-        {render.map((coin) => (
-          <Link to={`coin-details/${coin.id}`} onClick={handleSetTop100CoinsPrices} key={coin.id}>
-            <article className="coin">
-              <data className="rank">{coin.market_cap_rank}</data>
-              <header>
-                <img src={coin.image} alt={coin.name} className="coin-img" />
-                <h2 className="coin-symbol">{coin.symbol.toUpperCase()}</h2>
-              </header>
-              <section>
-                <data className="coin-price">{`$${coin.current_price.toLocaleString()}`}</data>
-              </section>
-              <section>
-                <data className="prc-chng-perc">{`${coin.price_change_percentage_24h.toFixed(1)}%`}</data>
-              </section>
-              <section>
-                <data className="coin-mrkt-cap">{`$${coin.market_cap}`}</data>
-              </section>
-            </article>
-          </Link>
-        ))}
+        <table className="coin-table">
+          <thead className="allCoins-th">
+            <tr className="head-tr">
+              <th className="rank">#</th>
+              <th className="coin-td">COIN</th>
+              <th className="price-td">PRICE</th>
+              <th className="perc-24h-td">24H</th>
+              <th className="mrkt-cap-td">MARKET CAP</th>
+            </tr>
+          </thead>
+          <tbody className="coin-tbody">
+            {render.map((coin) => (
+              <Link to={`coin-details/${coin.id}`} onClick={handleSetTop100CoinsPrices} key={coin.id}>
+                <tr className="body-tr">
+                  <td className="rank">{coin.market_cap_rank}</td>
+                  <td className="coin-td">
+                    <img
+                      src={coin.image}
+                      alt={coin.name}
+                      className="coin-img"
+                    />
+                    <h2 className="coin-symbol">{coin.symbol.toUpperCase()}</h2>
+                  </td>
+                  <td className="price-td">
+                    <data className="coin-price">{`$${coin.current_price.toLocaleString()}`}</data>
+                  </td>
+                  <td className="perc-24h-td">
+                    <data className="prc-chng-perc">{`${coin.price_change_percentage_24h.toFixed(1)}%`}</data>
+                  </td>
+                  <td className="mrkt-cap-td">
+                    <data>{`$${coin.market_cap}`}</data>
+                  </td>
+                </tr>
+              </Link>
+            ))}
+          </tbody>
+        </table>
       </main>
     );
   }
