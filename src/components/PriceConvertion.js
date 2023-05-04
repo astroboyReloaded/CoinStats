@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import useConvertion from '../hooks/useConvertion';
+import '../styles/PriceConvertion.css';
 
 const PriceConvertion = () => {
   const { symbol, image, currentPrices } = useSelector(
@@ -32,44 +33,45 @@ const PriceConvertion = () => {
   };
 
   return (
-    <form>
-      <label htmlFor="thisCoinAmount">
+    <form className="price-convertion-form">
+      <label htmlFor="thisCoinAmount" className="filter-label">
         <input
           id="thisCoinAmount"
+          className="thisCoinAmount convert-input"
           type="number"
           value={cleanValue(thisCoinAmount)}
           onInput={(e) => handleValue(e, handleThisCoinAmount)}
         />
-        <img src={image} alt="" />
+        <img className="filter-coin-image" src={image} alt="" />
         {symbol?.toUpperCase()}
       </label>
-      <br />
-      <span>{'<=>'}</span>
-      <label htmlFor="exAmount">
+      <label htmlFor="exAmount" className="filter-label">
         <input
-          type="number"
           id="exAmount"
+          type="number"
+          className="exAmount convert-input"
           value={cleanValue(exchangeAmount)}
           onInput={(e) => handleValue(e, handleExchangeAmount)}
         />
-      </label>
-      <label
-        htmlFor="currencies"
-      >
-        <select
-          id="currencies"
-          onChange={(e) => handleExchangeRate(e.target.value)}
+        <label
+          htmlFor="currencies"
         >
-          {currentPrices && Object.keys(currentPrices).map((symbol) => (
-            <option
-              key={symbol}
-              value={symbol}
-              selected={symbol === 'usd' && 'selected'}
-            >
-              {symbol.toUpperCase()}
-            </option>
-          ))}
-        </select>
+          <select
+            id="currencies"
+            onChange={(e) => handleExchangeRate(e.target.value)}
+            className="selectCurrency"
+          >
+            {currentPrices && Object.keys(currentPrices).map((symbol) => (
+              <option
+                key={symbol}
+                value={symbol}
+                selected={symbol === 'usd' && 'selected'}
+              >
+                {symbol.toUpperCase()}
+              </option>
+            ))}
+          </select>
+        </label>
       </label>
     </form>
   );
