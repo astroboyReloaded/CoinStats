@@ -22,6 +22,7 @@
   background-color: #20223f;
   color: gainsboro;
   border-right: 1px solid rgb(108, 108, 108);
+  margin-inline: 0.3rem;
 }
 
 .filter-coin-image {
