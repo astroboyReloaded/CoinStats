@@ -6,6 +6,11 @@
   flex-direction: row;
 }
 
+.coin-main-section {
+  display: flex;
+  flex-direction: column;
+}
+
 .coin-details-price {
   font-size: 2.1rem;
   width: fit-content;
@@ -13,4 +18,19 @@
 
 .mrkt-cap-chng-perc {
   width: fit-content;
+}
+
+.coin-MainData {
+  display: flex;
+  
+}
+
+.coin-MainData-Titles,
+.coin-MainData-Values {
+  display: flex;
+  flex-direction: column;
+}
+
+.description {
+  display: block;
 }
