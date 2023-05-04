@@ -59,11 +59,11 @@ const PriceConvertion = () => {
         <select
           id="currencies"
           onChange={(e) => handleExchangeRate(e.target.value)}
+          defaultValue="usd"
         >
           {currentPrices && Object.keys(currentPrices).map((symbol) => (
             <option
               key={symbol}
-              selected={symbol === 'usd' && 'selected'}
             >
               {symbol.toUpperCase()}
             </option>
