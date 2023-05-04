@@ -21,11 +21,11 @@ img {
   width: 2.1rem;
 }
 
-p {
+.categories-data-title {
   margin: 0;
   color: gainsboro;
 }
 
-data {
+.categories-data {
   color: goldenrod;
 }

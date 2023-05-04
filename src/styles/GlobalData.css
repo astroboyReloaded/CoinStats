@@ -7,11 +7,12 @@
 }
 
 .global-data-title {
+  margin: 0;
   border-radius: 6px;
   border-left: 6px solid yellowgreen;
   font-size: 0.72rem;
   text-align: left;
-  padding-inline: 0.3rem;
+  padding: 0.3rem;
   background-color: #20223f;
 }
 
