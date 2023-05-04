@@ -65,25 +65,25 @@ const CoinDetails = () => {
             </section>
             <PriceConvertion />
             <section className="priceChange-percentages">
-              <table>
+              <table className="price-percentage-table">
                 <thead>
-                  <tr>
-                    <th>24H</th>
-                    <th>7D</th>
-                    <th>14D</th>
-                    <th>30D</th>
-                    <th>60D</th>
-                    <th>1Y</th>
+                  <tr className="price-perc-tr">
+                    <th className="price-percentage-th">24H</th>
+                    <th className="price-percentage-th">7D</th>
+                    <th className="price-percentage-th">14D</th>
+                    <th className="price-percentage-th">30D</th>
+                    <th className="price-percentage-th">60D</th>
+                    <th className="price-percentage-th">1Y</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>{marketData.price_change_percentage_24h}</td>
-                    <td>{marketData.price_change_percentage_7d}</td>
-                    <td>{marketData.price_change_percentage_14d}</td>
-                    <td>{marketData.price_change_percentage_30d}</td>
-                    <td>{marketData.price_change_percentage_60d}</td>
-                    <td>{marketData.price_change_percentage_1y}</td>
+                  <tr className="price-perc-tr">
+                    <td className={`price-percentage-td ${marketData.price_change_percentage_24h > 0 ? 'green' : 'red'}`}>{marketData.price_change_percentage_24h.toFixed(2).replace('-', '')}</td>
+                    <td className={`price-percentage-td ${marketData.price_change_percentage_7d > 0 ? 'green' : 'red'}`}>{marketData.price_change_percentage_7d.toFixed(2).replace('-', '')}</td>
+                    <td className={`price-percentage-td ${marketData.price_change_percentage_14d > 0 ? 'green' : 'red'}`}>{marketData.price_change_percentage_14d.toFixed(2).replace('-', '')}</td>
+                    <td className={`price-percentage-td ${marketData.price_change_percentage_30d > 0 ? 'green' : 'red'}`}>{marketData.price_change_percentage_30d.toFixed(2).replace('-', '')}</td>
+                    <td className={`price-percentage-td ${marketData.price_change_percentage_60d > 0 ? 'green' : 'red'}`}>{marketData.price_change_percentage_60d.toFixed(2).replace('-', '')}</td>
+                    <td className={`price-percentage-td ${marketData.price_change_percentage_1y > 0 ? 'green' : 'red'}`}>{marketData.price_change_percentage_1y.toFixed(2).replace('-', '')}</td>
                   </tr>
                 </tbody>
               </table>

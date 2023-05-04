@@ -77,6 +77,35 @@
   display: flex;
 }
 
+.priceChange-percentages {
+  margin-block: 0.3rem;
+  background-color: #20223f;
+  border-radius: 6px;
+  padding: 0.3rem;
+}
+
+.price-percentage-table {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-perc-tr {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  font-size: 0.81rem;
+}
+
+.price-percentage-th {
+  width: 16.666%;
+}
+
+.price-percentage-td {
+  text-align: center;
+  width: 16.666%;
+  font-size: 0.66rem;
+}
+
 .coin-MainData-Titles,
 .coin-MainData-Values {
   display: flex;
