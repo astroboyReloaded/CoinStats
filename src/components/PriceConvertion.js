@@ -63,7 +63,6 @@ const PriceConvertion = () => {
           {currentPrices && Object.keys(currentPrices).map((symbol) => (
             <option
               key={symbol}
-              selected={symbol === 'usd' && 'selected'}
             >
               {symbol.toUpperCase()}
             </option>

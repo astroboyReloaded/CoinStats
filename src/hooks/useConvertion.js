@@ -8,7 +8,7 @@ const useConvertion = (prices) => {
   const [exchangeAmount, setExchangeAmount] = useState(0);
 
   useLayoutEffect(() => {
-    const exRate = prices?.usd;
+    const exRate = prices?.aed;
     setExchangeRate(exRate);
   }, [prices]);
 
