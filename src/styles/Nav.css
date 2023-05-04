@@ -1,8 +1,10 @@
 nav {
   display: flex;
   flex-wrap: wrap;
+  background-color: #06041d;
   padding: 0.3rem;
   align-items: center;
+  justify-content: center;
 }
 
 .logo {
@@ -13,6 +15,7 @@ nav {
   font-size: 1.2rem;
   margin: 0 0.3rem;
   align-self: center;
+  color: gainsboro;
 }
 
 .nav-ul {
