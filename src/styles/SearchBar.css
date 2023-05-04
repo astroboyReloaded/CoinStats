@@ -3,6 +3,14 @@
 }
 
 .searchBar {
-  border-radius: 9px;
-  border: 2px solid yellowgreen;
+  border-radius: 6px;
+  border: 2px solid goldenrod;
+  background: url('../../public/icons/magnifying-glass-solid.svg') 100% 50% no-repeat;
+  background-size: 0.9rem;
+  background-color: gainsboro;
+}
+
+.searchBar:focus {
+  outline: none;
+  border: yellowgreen 2px solid;
 }
