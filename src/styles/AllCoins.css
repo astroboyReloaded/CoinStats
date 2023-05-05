@@ -22,6 +22,8 @@
   border-top: 1px solid goldenrod;
 }
 
+h3 { margin: 0; }
+
 .coin-tbody {
   display: flex;
   flex-direction: column;
@@ -37,6 +39,8 @@
   color: gainsboro;
   border-bottom: 1px solid goldenrod;
 }
+
+p { margin: 0; }
 
 .rank {
   min-width: 1.2rem;
