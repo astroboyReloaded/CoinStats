@@ -1,10 +1,10 @@
 <a name="readme-top"></a>
 
 <div align="center">
-  <img src="Astroboy-removebg.png" alt="logo" width="120"  height="auto" />
+  <img src="./public/icons/GeckoCoin-logo.jpg" alt="logo" width="120"  height="auto" />
   <br/>
 
-  <h3><b>Hello Microverse</b></h3>
+  <h3><b>CoinStats</b></h3>
 
 </div>
 
@@ -16,7 +16,8 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
+    <!-- - [🚀 Live Demo](#live-demo) -->
+    - [🚀 Live Demo](#presentation-video)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -33,27 +34,28 @@
 
 # 📖 Hello Microverse <a name="about-project"></a>
 
-> **Hello Microverse** is a starter exercise to create new projects based on specific settings and requirements to ensure proper structure and best practices. By cloning this repo and running `npm install` we will have a basic boilerplate with properly configured linters and correct initial file structrure.
+**CoinStats** is a React/Redux SPA that fetches and renders data from the [CoinGecko API](https://www.coingecko.com/en/api).
+It allows users to see market data for each of the top 100 coins in the crypto Market and Features a Convertion Filter that alows you to see te value of each coin in different currencies, as well as converting different amounts (filter works in a two way fashion).
+To easily find a coin you are interested, use the search bar filter in the main page.
 
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-> This boilerplate focuses only on `linters` and `.gitignore`. No JS or Server are included in this repo.
 
 <details>
   <summary>Client</summary>
   <ul>
     <li><a href="https://www.w3.org/html/">HTML</a></li>
     <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">SCSS</a></li>
-    <li><a href="https://www.javascript.com/">JavaScript</a></li>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
   </ul>
 </details>
 
 <details>
   <summary>Server</summary>
   <ul>
-    <li><a href="https://www.netlify.com/">Netlify</a></li>
+    <li><a href="https://render.com/">render</a></li>
   </ul>
 </details>
 
@@ -61,17 +63,22 @@
 
 ### Key Features <a name="key-features"></a>
 
-- **Linters**: [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/), [Webhint](https://webhint.io/), and [Stylelint](https://stylelint.io/.)
-- **A `.github/workflows/linters.yml`** file to run linters on GitHub Pull Request.
-- **A** `.gitignore` file, including `node_modules/`.
-
-- [Sass](https://sass-lang.com/).
+- Market data for:
+  - **Global Market Cap**
+  - **24hr Volume**
+  - **Top 100 cryptocurrencies**
+- Main Market data for each of the Top 100 criptocurrencies
+- **Price convertion filter** to multiple currencies for each of the Top 100 coins. **Filter handles different amounts in both sides**.
 
 <!-- LIVE DEMO -->
 
-## 🚀 Live Demo <a name="live-demo"></a>
+<!-- ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://hello-microverse.netlify.app/)
+- [Live Demo Link](https://hello-microverse.netlify.app/) -->
+
+## 🚀 Presentation Video <a name="presentation-video"></a>
+
+[Presentation Video](https://www.loom.com/share/85453aa7d18b4ed6b72e51b30c49149a)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -79,8 +86,7 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> If you are a new developer and would like to have a basic project boilerplate to start practicing your code or creating your first app-features, cloning this project will give you what you need!
-> To get a local copy up and running, follow these steps:
+Want to build up from this project?
 
 ### Prerequisites
 
@@ -89,15 +95,26 @@ In order to run this project you need:
 - Have [npm](https://www.npmjs.com/package/npm) installed in your project:
   `curl -qL https://www.npmjs.com/install.sh | sh`
 
+- Have [Node.js](https://nodejs.org/en) installed.
+  Run:
+
+```sh
+node -v
+```
+
+to check if you have Node installed and what vertion it is. If not, follow the steps in the official website.
+
 ### Setup
 
 Clone this repository to your desired folder:
 
-`git clone https://github.com/astroboyReloaded/Hello-Microverse.git`
+```sh
+git clone https://github.com/astroboyReloaded/CoinStats.git
+```
 
 or
 
-`git clone git@github.com:astroboyReloaded/Hello-Microverse.git` <-- _Only if you have [SSH keys configured](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on your GitHub account_.
+`git clone git@github.com:astroboyReloaded/CoinStats.git` <-- _Only if you have [SSH keys configured](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on your GitHub account_.
 
 ### Install:
 
@@ -105,13 +122,7 @@ run the `npm install` command in your console.
 
 ### Usage
 
-To run the linters before committing any changes to your code, execute the following commands:
-
-`lighthouse <url>`
-`npx hint .`
-`npx stylelint "**/*.scss"` <--_NOTE: this repo is set up to use with SCSS. If you would like to use CSS, you must replace `"**/*.scss"` with `"**/*.{css,scss}"` in **line 48** of the `.stylelintrc.json` file, and run the linter with:_
-
-`npx stylelint "**/*.{css,scss}"` _instead_.
+Users can look for their favorite coin using the searchbar or escrolling on the **All Coins** section and see basic market data about it. On click on any coin, users go to a **Coin Details** page where they can see Critical market data about the specific coin, as well as using the convertion filter to convert different amounts of the coin into many other currencies, currently only supportin many fiat currencies and a few cryptocurrencies, the amounts can be changed on both sides of the filter.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -129,7 +140,10 @@ To run the linters before committing any changes to your code, execute the follo
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ESLint](https://eslint.org/).
+- Top 100 cryptocurrencies in convertion filter.
+- Critical Market data in differents currencies for each coin.
+- Price charts for each coin.
+- Data about each of the top 3 coins for each category in **Categories**
 
 <!-- CONTRIBUTING -->
 
@@ -149,8 +163,11 @@ Feel free to check the [issues page](../../issues/).
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
- I would like to thank [Microverse](https://www.microverse.org/) for teaching me these tools, my teammates who share great advice, and Copilot and Chat GPT
-for unexperienced topics handlable (used for lines 18-23 of PriceConvertion.js).
+I would like to thank [Microverse](https://www.microverse.org/) for teaching me these tools, my teammates who share great advice.
+[CoinGecko API](https://www.coingecko.com/en/api)
+Copilot and Chat GPT used for cleanValue function in convertion filter. (lines 31-35 of PriceConvertion.js).
+[NightCafé](https://nightcafe.studio/) AI Art Generator for creating the logo for this app.
+App design inspired on [Ballhead App](https://www.behance.net/gallery/31579789/Ballhead-App-%28Free-PSDs%29) by Nelson Saka.
 
 <!-- LICENSE -->
 
