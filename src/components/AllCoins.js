@@ -59,14 +59,14 @@ const AllCoins = () => {
               <Link to={`coin-details/${coin.id}`} onClick={handleSetTop100CoinsPrices} key={coin.id}>
                 <article className="body-tr">
                   <p className="rank">{coin.market_cap_rank}</p>
-                  <p className="coin-td">
+                  <div className="coin-td">
                     <img
                       src={coin.image}
                       alt={coin.name}
                       className="coin-img"
                     />
-                    <h2 className="all-coins-symbol">{coin.symbol.toUpperCase()}</h2>
-                  </p>
+                    <p className="all-coins-symbol">{coin.symbol.toUpperCase()}</p>
+                  </div>
                   <p className="price-td">
                     <data className="coin-price">{`$${coin.current_price.toLocaleString()}`}</data>
                   </p>
