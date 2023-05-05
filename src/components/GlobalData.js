@@ -27,7 +27,7 @@ const GlobalData = () => {
     const { data } = globalData;
     return (
       <section className="global-data-section">
-        <p className="global-data-title marketCap">
+        <h2 className="global-data-title marketCap">
           GLOBAL MARKET CAP:
           <data className="global-data">
             $
@@ -37,14 +37,14 @@ const GlobalData = () => {
               %
             </span>
           </data>
-        </p>
-        <p className="global-data-title vol-24H">
+        </h2>
+        <h2 className="global-data-title vol-24H">
           24HR VOLUME:
           <data className="global-data">
             $
             {Math.floor(data.total_volume.usd).toLocaleString()}
           </data>
-        </p>
+        </h2>
       </section>
     );
   }
