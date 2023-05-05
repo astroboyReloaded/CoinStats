@@ -17,6 +17,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
     <!-- - [🚀 Live Demo](#live-demo) -->
+    - [🚀 Live Demo](#presentation-video)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -70,10 +71,14 @@ To easily find a coin you are interested, use the search bar filter in the main 
 - **Price convertion filter** to multiple currencies for each of the Top 100 coins. **Filter handles different amounts in both sides**.
 
 <!-- LIVE DEMO -->
-<!--
-## 🚀 Live Demo <a name="live-demo"></a>
+
+<!-- ## 🚀 Live Demo <a name="live-demo"></a>
 
 - [Live Demo Link](https://hello-microverse.netlify.app/) -->
+
+## 🚀 Presentation Video <a name="presentation-video"></a>
+
+[Presentation Video](https://www.loom.com/share/85453aa7d18b4ed6b72e51b30c49149a)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
