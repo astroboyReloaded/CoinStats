@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders App 1`] = `
+<div
+  className="wrapper"
+>
+  <nav>
+    <img
+      alt="gecko coin"
+      className="logo"
+      src="../icons/GeckoCoin-logo.jpg"
+    />
+    <h1
+      className="app-title"
+    >
+      CoinStats
+    </h1>
+    <ul
+      className="nav-ul"
+    >
+      <li>
+        <a
+          aria-current="page"
+          className="navLink active"
+          href="/"
+          onClick={[Function]}
+        >
+          All Coins
+        </a>
+      </li>
+      <li>
+        <a
+          className="navLink"
+          href="/categories"
+          onClick={[Function]}
+        >
+          Categories
+        </a>
+      </li>
+    </ul>
+  </nav>
+  All Coins
+</div>
+`;
