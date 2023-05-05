@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import useConvertion from '../hooks/useConvertion';
 import '../styles/PriceConvertion.css';
@@ -7,8 +7,6 @@ const PriceConvertion = () => {
   const { symbol, image, currentPrices } = useSelector(
     (state) => state.priceConvertion.coinInFilter,
   );
-
-  const exAmountInputRef = useRef(null);
 
   const [
     thisCoinAmount,
@@ -54,7 +52,6 @@ const PriceConvertion = () => {
           className="exAmount convert-input filter-input"
           value={cleanValue(exchangeAmount)}
           onInput={(e) => handleValue(e, handleExchangeAmount)}
-          ref={exAmountInputRef}
         />
         <label
           htmlFor="currencies"
@@ -68,7 +65,6 @@ const PriceConvertion = () => {
               <option
                 key={symbol}
                 value={symbol}
-                onClick={exAmountInputRef.current.focus()}
               >
                 {symbol.toUpperCase()}
               </option>
