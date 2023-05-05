@@ -67,16 +67,16 @@ const AllCoins = () => {
                       alt={coin.name}
                       className="coin-img"
                     />
-                    <h2 className="coin-symbol">{coin.symbol.toUpperCase()}</h2>
+                    <h2 className="all-coins-symbol">{coin.symbol.toUpperCase()}</h2>
                   </td>
                   <td className="price-td">
                     <data className="coin-price">{`$${coin.current_price.toLocaleString()}`}</data>
                   </td>
                   <td className="perc-24h-td">
-                    <data className="prc-chng-perc">{`${coin.price_change_percentage_24h.toFixed(1)}%`}</data>
+                    <data className={`prc-chng-perc ${coin.price_change_percentage_24h > 0 ? 'green' : 'red'}`}>{`${coin.price_change_percentage_24h.toFixed(1).replace('-', '')}%`}</data>
                   </td>
                   <td className="mrkt-cap-td">
-                    <data>{`$${coin.market_cap}`}</data>
+                    <data>{`$${coin.market_cap?.toLocaleString()}`}</data>
                   </td>
                 </tr>
               </Link>

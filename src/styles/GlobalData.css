@@ -1,21 +1,33 @@
-.global-data {
+.global-data-section {
   display: flex;
   margin: 0;
   padding: 0.3rem;
-  color: gainsboro;
+  justify-content: space-around;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 .global-data-title {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   border-radius: 6px;
   border-left: 6px solid yellowgreen;
-  font-size: 0.72rem;
+  font-size: 0.69rem;
   text-align: left;
-  padding: 0.3rem;
+  color: goldenrod;
+  padding: 0.3rem 0.6rem;
   background-color: #20223f;
 }
 
 .marketCap {
   margin-right: 0.3rem;
+}
+
+.global-data {
+  color: gainsboro;
+  font-size: 0.72rem;
+}
+
+.MC-chng-perc {
+  margin-left: 0.3rem;
 }

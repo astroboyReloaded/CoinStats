@@ -53,24 +53,29 @@
   width: fit-content;
   align-self: center;
   margin-inline: 0.3rem;
+  display: flex;
+  align-items: center;
 }
 
 .green {
   color: yellowgreen;
+  text-align: center;
 }
 
 .green::before {
+  padding-bottom: 0.18rem;
   content: '▲';
-  font-size: 0.6rem;
+  font-size: 0.45rem;
 }
 
 .red {
-  color: rgb(230, 71, 105);
+  color: rgb(255, 39, 84);
 }
 
 .red::before {
+  padding-top: 0.18rem;
   content: '▼';
-  font-size: 0.6rem;
+  font-size: 0.45rem;
 }
 
 .priceChange-percentages {
@@ -94,12 +99,17 @@
 
 .price-percentage-th {
   width: 16.666%;
+  display: flex;
+  justify-content: left;
+  padding-left: 0.36rem;
 }
 
 .price-percentage-td {
   text-align: center;
   width: 16.666%;
   font-size: 0.66rem;
+  display: flex;
+  justify-content: left;
 }
 
 .coin-MainData {
@@ -126,6 +136,7 @@
   width: 100%;
   display: flex;
   border-bottom: 1px solid rgb(108, 108, 108);
+  padding-block: 0.3rem;
 }
 
 .coinMD-th {

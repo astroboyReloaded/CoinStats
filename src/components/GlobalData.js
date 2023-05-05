@@ -26,17 +26,23 @@ const GlobalData = () => {
   if (globalData !== 'Global Data') {
     const { data } = globalData;
     return (
-      <section className="global-data">
+      <section className="global-data-section">
         <p className="global-data-title marketCap">
-          GLOBAL MARKET CAP: $
-          <data>
-            {data.total_market_cap.usd.toLocaleString()}
+          GLOBAL MARKET CAP:
+          <data className="global-data">
+            $
+            {Math.floor(data.total_market_cap.usd).toLocaleString()}
+            <span className={`MC-chng-perc ${data.market_cap_change_percentage_24h_usd > 0 ? 'green' : 'red'}`}>
+              {data.market_cap_change_percentage_24h_usd.toFixed(1).replace('-', '')}
+              %
+            </span>
           </data>
         </p>
         <p className="global-data-title">
-          24HR VOLUME: $
-          <data>
-            {data.total_volume.usd.toLocaleString()}
+          24HR VOLUME:
+          <data className="global-data">
+            $
+            {Math.floor(data.total_volume.usd).toLocaleString()}
           </data>
         </p>
       </section>

@@ -25,6 +25,10 @@
   margin-inline: 0.3rem;
 }
 
+.filter-input:focus {
+  outline: none;
+}
+
 .filter-coin-image {
   width: 15px;
   height: 15px;

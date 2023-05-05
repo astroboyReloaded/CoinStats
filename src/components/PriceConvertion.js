@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import useConvertion from '../hooks/useConvertion';
 import '../styles/PriceConvertion.css';
@@ -7,6 +7,8 @@ const PriceConvertion = () => {
   const { symbol, image, currentPrices } = useSelector(
     (state) => state.priceConvertion.coinInFilter,
   );
+
+  const exAmountInputRef = useRef(null);
 
   const [
     thisCoinAmount,
@@ -37,7 +39,7 @@ const PriceConvertion = () => {
       <label htmlFor="thisCoinAmount" className="filter-label">
         <input
           id="thisCoinAmount"
-          className="thisCoinAmount convert-input"
+          className="thisCoinAmount convert-input filter-input"
           type="number"
           value={cleanValue(thisCoinAmount)}
           onInput={(e) => handleValue(e, handleThisCoinAmount)}
@@ -49,9 +51,10 @@ const PriceConvertion = () => {
         <input
           id="exAmount"
           type="number"
-          className="exAmount convert-input"
+          className="exAmount convert-input filter-input"
           value={cleanValue(exchangeAmount)}
           onInput={(e) => handleValue(e, handleExchangeAmount)}
+          ref={exAmountInputRef}
         />
         <label
           htmlFor="currencies"
@@ -59,13 +62,14 @@ const PriceConvertion = () => {
           <select
             id="currencies"
             onChange={(e) => handleExchangeRate(e.target.value)}
-            className="selectCurrency"
+            className="selectCurrency filter-input"
           >
             {currentPrices && Object.keys(currentPrices).map((symbol) => (
               <option
                 key={symbol}
                 value={symbol}
                 selected={symbol === 'usd' && 'selected'}
+                onClick={exAmountInputRef.current.focus()}
               >
                 {symbol.toUpperCase()}
               </option>

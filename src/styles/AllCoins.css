@@ -45,24 +45,25 @@
 }
 
 .coin-img {
-  max-width: 1rem;
+  max-width: 0.9rem;
 }
 
-.coin-symbol {
+.all-coins-symbol {
   font-size: 0.6rem;
   margin: 0;
 }
 
 .price-td {
-  min-width: 4rem;
+  min-width: 3.9rem;
   text-align: right;
 }
 
 .perc-24h-td {
-  min-width: 3rem;
+  min-width: 3.3rem;
   text-align: right;
 }
 
 .mrkt-cap-td {
-  min-width: 6rem;text-align: right;
+  min-width: 7.2rem;
+  text-align: right;
 }
