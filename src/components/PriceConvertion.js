@@ -18,13 +18,6 @@ const PriceConvertion = () => {
     handleExchangeRate,
   ] = useConvertion(currentPrices);
 
-  // replace 00 for 0 or 0[1-9] for [1-9] (with help from Copilot  :D)
-  const cleanValue = (value) => {
-    const regex = /(^0{2})|(^0[1-9])/;
-    const stringValue = value.toString(); // <-- Idea adapted from GPT propmpt result
-    return stringValue.replace(regex, (match) => match[match.length - 1]);
-  };
-
   const handleValue = (e, handleWith) => {
     const amount = parseFloat(e.target.value);
     if (Number.isNaN(amount)) {
@@ -32,6 +25,13 @@ const PriceConvertion = () => {
     } else {
       handleWith(amount);
     }
+  };
+
+  // replace 00 for 0 or 0[1-9] for [1-9] (with help from Copilot  :D)
+  const cleanValue = (value) => {
+    const regex = /(^0{2})|(^0[1-9])/;
+    const stringValue = value.toString(); // <-- Idea adapted from GPT propmpt result
+    return stringValue.replace(regex, (match) => match[match.length - 1]);
   };
 
   return (
@@ -68,7 +68,6 @@ const PriceConvertion = () => {
               <option
                 key={symbol}
                 value={symbol}
-                selected={symbol === 'usd' && 'selected'}
                 onClick={exAmountInputRef.current.focus()}
               >
                 {symbol.toUpperCase()}

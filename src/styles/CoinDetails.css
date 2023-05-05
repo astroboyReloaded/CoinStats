@@ -121,13 +121,14 @@
   justify-content: space-between;
 }
 
-.con-min-data-thead-tbody{
+.con-min-data-thead-tbody {
   width: 50%;
 }
 
 .coin-MainData-tr {
   display: flex;
-  flex-direction: column;font-size: 0.81rem;
+  flex-direction: column;
+  font-size: 0.81rem;
 }
 
 .coinMD-th,
@@ -155,4 +156,3 @@
 a {
   color: goldenrod;
 }
-
