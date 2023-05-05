@@ -100,8 +100,8 @@
 .price-percentage-th {
   width: 16.666%;
   display: flex;
-  justify-content: left;
-  padding-left: 0.36rem;
+  justify-content: center;
+  padding-right: 0.6rem;
 }
 
 .price-percentage-td {
