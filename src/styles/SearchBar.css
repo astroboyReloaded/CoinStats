@@ -1,0 +1,16 @@
+.searchContainer {
+  text-align: center;
+}
+
+.searchBar {
+  border-radius: 6px;
+  border: 2px solid goldenrod;
+  background: url('../../public/icons/magnifying-glass-solid.svg') 100% 50% no-repeat;
+  background-size: 0.9rem;
+  background-color: gainsboro;
+}
+
+.searchBar:focus {
+  outline: none;
+  border: yellowgreen 2px solid;
+}

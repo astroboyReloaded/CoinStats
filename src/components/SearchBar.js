@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setSearch } from '../redux/all-coins/allCoinsSlice';
+import '../styles/SearchBar.css';
 
 const SearchBar = () => {
   const handleSubmit = (e) => e.preventDefault();
@@ -21,22 +22,15 @@ const SearchBar = () => {
     );
   };
 
-  const handleClear = () => {
-    dispatch(setSearch({
-      search: '',
-      results: [],
-    }));
-  };
-
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="searchContainer">
       <input
         onChange={(e) => handleChange(e)}
         type="text"
         placeholder="Search"
         value={search?.length ? search : ''}
+        className="searchBar"
       />
-      <input type="button" value="↻" onClick={handleClear} />
     </form>
   );
 };

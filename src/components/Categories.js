@@ -34,15 +34,18 @@ const Categories = () => {
                 <img key={image} src={image} alt={image} />
               ))}
             </div>
-            <p>
-              <data>{`Market Cap: $${category.market_cap}`}</data>
+            <p className="categories-data-title">
+              Market Cap:
             </p>
-            <p>
-              <data>{`24h vlume: $ ${category.volume_24h}`}</data>
+            <data className="categories-data">{`$${category.market_cap?.toLocaleString()}`}</data>
+            <p className="categories-data-title">
+              24h vlume:
             </p>
-            <p>
-              <data>{`MC change 24h: $ ${category.market_cap_change_24h}`}</data>
+            <data className="categories-data">{`$${category.volume_24h?.toLocaleString()}`}</data>
+            <p className="categories-data-title">
+              MC change 24h:
             </p>
+            <data className={`categories-data ${category.market_cap_change_24h > 0 ? 'green' : 'red'}`}>{`$${category.market_cap_change_24h?.toLocaleString().replace('-', '')}`}</data>
           </article>
         ))}
       </main>

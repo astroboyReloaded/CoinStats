@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const initialState = {
   allCoins: 'All Coins',
   search: '',
-  results: [],
+  results: null,
   isLoading: false,
   error: '',
 };
