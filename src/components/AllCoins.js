@@ -33,7 +33,7 @@ const AllCoins = () => {
   };
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <p className="All-Loading">Loading...</p>;
   }
 
   if (error) {

@@ -37,15 +37,15 @@ const Categories = () => {
             <p className="categories-data-title">
               Market Cap:
             </p>
-            <data className="categories-data">{`$${category.market_cap}`}</data>
+            <data className="categories-data">{`$${category.market_cap?.toLocaleString()}`}</data>
             <p className="categories-data-title">
               24h vlume:
             </p>
-            <data className="categories-data">{`$${category.volume_24h}`}</data>
+            <data className="categories-data">{`$${category.volume_24h?.toLocaleString()}`}</data>
             <p className="categories-data-title">
               MC change 24h:
             </p>
-            <data className="categories-data">{`$${category.market_cap_change_24h}`}</data>
+            <data className={`categories-data ${category.market_cap_change_24h > 0 ? 'green' : 'red'}`}>{`$${category.market_cap_change_24h?.toLocaleString().replace('-', '')}`}</data>
           </article>
         ))}
       </main>

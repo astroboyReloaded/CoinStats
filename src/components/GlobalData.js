@@ -38,7 +38,7 @@ const GlobalData = () => {
             </span>
           </data>
         </p>
-        <p className="global-data-title">
+        <p className="global-data-title vol-24H">
           24HR VOLUME:
           <data className="global-data">
             $

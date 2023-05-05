@@ -7,20 +7,25 @@
 }
 
 .global-data-title {
-  display: flex;
-  flex-direction: column;
   margin: 0;
   border-radius: 6px;
+  display: flex;
+  flex-direction: column;
   border-left: 6px solid yellowgreen;
-  font-size: 0.69rem;
-  text-align: left;
-  color: goldenrod;
-  padding: 0.3rem 0.6rem;
   background-color: #20223f;
+  padding: 0.3rem 0.6rem;
+  text-align: left;
+  font-size: 0.69rem;
+  color: goldenrod;
 }
 
 .marketCap {
   margin-right: 0.3rem;
+  width: calc( 54% - 00.36rem);
+}
+
+.vol-24H {
+  width: 45%;
 }
 
 .global-data {
