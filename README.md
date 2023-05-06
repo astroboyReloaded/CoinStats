@@ -16,8 +16,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
-    <!-- - [🚀 Live Demo](#live-demo) -->
-    - [🚀 Live Demo](#presentation-video)
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -72,11 +71,9 @@ To easily find a coin you are interested, use the search bar filter in the main 
 
 <!-- LIVE DEMO -->
 
-<!-- ## 🚀 Live Demo <a name="live-demo"></a>
+ ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://hello-microverse.netlify.app/) -->
-
-## 🚀 Presentation Video <a name="presentation-video"></a>
+[Live Demo Link](https://coinstats-nd4q.onrender.com)
 
 [Presentation Video](https://www.loom.com/share/85453aa7d18b4ed6b72e51b30c49149a)
 
