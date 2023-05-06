@@ -8,8 +8,6 @@ const PriceConvertion = () => {
     (state) => state.priceConvertion.coinInFilter,
   );
 
-  const exAmountInputRef = useRef(null);
-
   const [
     thisCoinAmount,
     exchangeAmount,
