@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders AllCoins 1`] = `"All Coins"`;
+
+exports[`renders inner components 1`] = `
+<p
+  className="All-Loading"
+>
+  Loading...
+</p>
+`;
