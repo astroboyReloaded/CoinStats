@@ -42,6 +42,7 @@ const AllCoins = () => {
 
   if (allCoins !== 'All Coins') {
     const render = results === null ? allCoins : results;
+    console.log(JSON.stringify(render));
     return (
       <main className="categoriesMain">
         <GlobalData />
@@ -57,7 +58,10 @@ const AllCoins = () => {
           <main className="coin-tbody">
             {render.map((coin) => (
               <Link to={`coin-details/${coin.id}`} onClick={handleSetTop100CoinsPrices} key={coin.id}>
-                <article className="body-tr">
+                <article
+                  className="body-tr"
+                  data-testid="coinData-Container"
+                >
                   <p className="rank">{coin.market_cap_rank}</p>
                   <p className="coin-td">
                     <img

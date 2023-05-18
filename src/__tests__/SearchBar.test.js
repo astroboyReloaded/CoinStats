@@ -4,18 +4,21 @@ import '@testing-library/jest-dom'
 import SearchBar from "../components/SearchBar";
 import { Provider } from "react-redux";
 import store from "../redux/store";
+import AllCoins from "../components/AllCoins";
 
-it('Search value is updated correctly', () => {
-  render(
-    <Provider store={store}>
-      <SearchBar />
-    </Provider>
-  );
+describe('Search Bar', () => {
+  it('Search value is updated correctly', () => {
+    render(
+      <Provider store={store}>
+        <SearchBar />
+      </Provider>
+    );
 
-  const input = screen.getByRole("textbox")
-  expect(input).toHaveAttribute('placeholder', 'Search')
+    const input = screen.getByRole("textbox");
+    expect(input).toHaveAttribute('placeholder', 'Search');
 
-  userEvent.type(input, 'Bitcoin')
+    userEvent.type(input, 'Bitcoin');
 
-  expect(screen.getByRole('textbox', {value: 'Bitcoin'})).toBeInTheDocument()
-});
+    expect(screen.getByRole('textbox', {value: 'Bitcoin'})).toBeInTheDocument();
+  });
+})

@@ -5,8 +5,10 @@ import store from '../redux/store';
 import AllCoins from '../components/AllCoins';
 import GlobalData from '../components/GlobalData';
 import SearchBar from '../components/SearchBar';
+import { fetchAllCoins } from '../redux/all-coins/allCoinsSlice';
+import { render, screen } from '@testing-library/react';
 
-it('renders AllCoins', () => {
+it('renders AllCoins component', () => {
   const tree = renderer
     .create(
       <BrowserRouter>
@@ -21,14 +23,15 @@ it('renders AllCoins', () => {
   expect(tree).toMatchSnapshot();
 });
 
-it('renders inner components', () => {
+it('renders <SearchBar> and <GlobalData> components', () => {
   const tree = renderer.create(
     <Provider store={store}>
       <AllCoins>
         <GlobalData />
         <SearchBar />
-    </AllCoins>
+      </AllCoins>
     </Provider>
   ).toJSON();
   expect(tree).toMatchSnapshot();
 })
+
