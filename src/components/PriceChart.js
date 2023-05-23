@@ -75,12 +75,12 @@ const PriceChart = ({ coinID }) => {
   }, [prices, w, timeframe]);
 
   const timeframes = [
-    ['1H', 1],
-    ['24H', 1],
-    ['7D', 7],
-    ['1M', 30],
-    ['3M', 90],
-    ['1Y', 365],
+    ['1H', '1&interval=5minute'],
+    ['24H', '1&interval=hourly'],
+    ['7D', '7&interval=hourly'],
+    ['1M', '30&interval=daily'],
+    ['3M', '90&interval=daily'],
+    ['1Y', '365&interval=weekly'],
     ['MAX', 'max'],
   ];
 
@@ -88,7 +88,7 @@ const PriceChart = ({ coinID }) => {
     <>
       <svg width={w} height={h} />
       <div className="tfBtnsContainer">
-        {timeframes.map((tf) => <button type="button" className={`tfBtn ${tf[0] === timeframe[0] && 'active-tFrame'}`} key={tf[0]} onClick={() => setTimeframe(tf)}>{tf[0]}</button>)}
+        {timeframes.map((tf) => <button type="button" className={`tfBtn ${tf[0] === timeframe[0] && 'active-tfBtn'}`} key={tf[0]} onClick={() => setTimeframe(tf)}>{tf[0]}</button>)}
       </div>
     </>
   );
