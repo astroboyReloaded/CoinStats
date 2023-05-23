@@ -13,7 +13,7 @@ const PriceChart = ({ coinID }) => {
 
   const numberOfIntervals = useCallback((d) => {
     if (timeframe[0] === '1H') {
-      return (d.filter((p, i) => i >= prices.length - 15));
+      return d.filter((p, i) => i >= d.length - 15);
     }
     return d;
   });
