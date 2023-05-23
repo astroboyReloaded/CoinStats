@@ -1,0 +1,23 @@
+svg {
+  position: relative;
+  left: -0.6rem;
+  margin-top: 0.9rem;
+}
+
+.domain {
+  position: absolute;
+  color: rgba(0, 0, 0, 0);
+}
+
+#xAxis .tick line {
+  stroke: #ffffff00;
+}
+
+#yAxis .tick line {
+  stroke: #ffffff33;
+}
+
+#yAxis .tick text {
+  position: relative;
+  left: 50px;
+}

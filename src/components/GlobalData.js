@@ -25,6 +25,7 @@ const GlobalData = () => {
   }
   if (globalData !== 'Global Data') {
     const { data } = globalData;
+
     return (
       <section className="global-data-section">
         <h2 className="global-data-title marketCap">

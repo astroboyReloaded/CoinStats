@@ -9,6 +9,7 @@ import {
 import PriceConvertion from './PriceConvertion';
 import '../styles/CoinDetails.css';
 import useSetThisCoinInFilter from '../hooks/useSetThisCoinInFilter';
+import PriceChart from './PriceChart';
 
 const CoinDetails = () => {
   const { id } = useParams();
@@ -64,6 +65,7 @@ const CoinDetails = () => {
               <data className={`mrkt-cap-chng-perc ${marketData.market_cap_change_percentage_24h > 0 ? 'green' : 'red'}`}>{`${marketData.market_cap_change_percentage_24h.toFixed(2).replace('-', '')}%`}</data>
             </section>
             <PriceConvertion />
+            <PriceChart coinID={id} />
             <section className="priceChange-percentages">
               <table className="price-percentage-table">
                 <thead>
