@@ -1,28 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import PropTypes from 'prop-types';
 import '../styles/PriceChart.css';
 
 const PriceChart = ({ coinID }) => {
-  const [prices, setPrices] = useState(null);
   const [w, setW] = useState(window.innerWidth);
   const h = w * 0.6;
   const p = 36;
   const svg = d3.select('svg');
+  const [prices, setPrices] = useState(null);
+  const [timeframe, setTimeframe] = useState(['24H', 1]);
+
+  const numberOfIntervals = useCallback((d) => {
+    if (timeframe[0] === '1H') {
+      return (d.filter((p, i) => i >= prices.length - 15));
+    }
+    return d;
+  });
 
   useEffect(() => {
-    d3.json(`https://api.coingecko.com/api/v3/coins/${coinID}/market_chart?vs_currency=usd&days=1`)
-      .then((data) => setPrices(data.prices));
-  }, [coinID]);
+    d3.json(`https://api.coingecko.com/api/v3/coins/${coinID}/market_chart?vs_currency=usd&days=${timeframe[1]}`)
+      .then((data) => {
+        setPrices(numberOfIntervals(data.prices));
+      });
+  }, [coinID, timeframe]);
 
-  const handleWidthChange = () => {
+  const handleWidthChange = useCallback(() => {
     setW(window.innerWidth);
-  };
+  });
 
   useEffect(() => {
     if (!prices) return;
 
     window.addEventListener('change', handleWidthChange);
+
+    svg.selectAll('*').remove();
     const xScale = d3.scaleTime()
       .domain([
         d3.min(prices, (p) => p[0]),
@@ -37,7 +49,7 @@ const PriceChart = ({ coinID }) => {
       ])
       .range([h - p, 0]);
 
-    const xAxis = d3.axisBottom(xScale);
+    const xAxis = d3.axisBottom(xScale).ticks(7);
     const yAxis = d3.axisRight(yScale);
 
     svg.append('g')
@@ -60,10 +72,25 @@ const PriceChart = ({ coinID }) => {
       .attr('d', d3.line()
         .x((d) => xScale(d[0]))
         .y((d) => yScale(d[1])));
-  }, [prices, w]);
+  }, [prices, w, timeframe]);
+
+  const timeframes = [
+    ['1H', 1],
+    ['24H', 1],
+    ['7D', 7],
+    ['1M', 30],
+    ['3M', 90],
+    ['1Y', 365],
+    ['MAX', 'max'],
+  ];
 
   return (
-    <svg width={w} height={h} />
+    <>
+      <svg width={w} height={h} />
+      <div className="tfBtnsContainer">
+        {timeframes.map((tf) => <button type="button" className={`tfBtn ${tf[0] === timeframe[0] && 'active-tFrame'}`} key={tf[0]} onClick={() => setTimeframe(tf)}>{tf[0]}</button>)}
+      </div>
+    </>
   );
 };
 

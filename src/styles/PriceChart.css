@@ -21,3 +21,22 @@ svg {
   position: relative;
   left: 50px;
 }
+
+.tfBtnsContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.2rem;
+}
+
+.tfBtn {
+  border: none;
+  border-radius: 12px;
+  padding: 0.3rem 0.6rem;
+  background-color: #ffffff2f;
+  font-size: 0.63rem;
+  color: white;
+}
+
+.active-tFrame {
+  background-color: yellowgreen;
+}
