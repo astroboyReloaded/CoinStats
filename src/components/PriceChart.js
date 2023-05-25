@@ -4,12 +4,33 @@ import PropTypes from 'prop-types';
 import '../styles/PriceChart.css';
 
 const PriceChart = ({ coinID }) => {
-  const [w, setW] = useState(window.innerWidth);
+  const w = window.innerWidth;
   const h = w * 0.6;
   const p = 36;
   const svg = d3.select('svg');
   const [prices, setPrices] = useState(null);
   const [timeframe, setTimeframe] = useState(['24H', 1]);
+  const [tooltipData, setTooltipData] = useState(null);
+
+  const handleMouseMove = useCallback(
+    (event) => {
+      const clientX = event.type === 'mousemove' ? event.clientX : event.touches[0].clientX;
+
+      const xScale = d3.scaleTime()
+        .domain([
+          d3.min(prices, (p) => p[0]),
+          d3.max(prices, (p) => p[0]),
+        ])
+        .range([0, w]);
+
+      const bisectDate = d3.bisector((d) => d[0]).left;
+      const mouseX = xScale.invert(clientX);
+
+      const index = bisectDate(prices, mouseX, 1);
+      setTooltipData(prices[index]);
+    },
+    [prices, w],
+  );
 
   const numberOfIntervals = useCallback((d) => {
     if (timeframe[0] === '1H') {
@@ -25,14 +46,8 @@ const PriceChart = ({ coinID }) => {
       });
   }, [coinID, timeframe]);
 
-  const handleWidthChange = useCallback(() => {
-    setW(window.innerWidth);
-  });
-
   useEffect(() => {
     if (!prices) return;
-
-    window.addEventListener('change', handleWidthChange);
 
     svg.selectAll('*').remove();
     const xScale = d3.scaleTime()
@@ -86,7 +101,19 @@ const PriceChart = ({ coinID }) => {
 
   return (
     <>
-      <svg width={w} height={h} />
+      <svg width={w} height={h} onMouseMove={handleMouseMove} />
+      {tooltipData && (
+        <div className="toolTip" style={{ top: -h, left: p }}>
+          <p className="tooltip-data">
+            date:
+            {new Date(tooltipData[0]).toLocaleString()}
+          </p>
+          <p className="tooltip-data">
+            price:
+            {tooltipData[1].toFixed(8)}
+          </p>
+        </div>
+      )}
       <div className="tfBtnsContainer">
         {timeframes.map((tf) => <button type="button" className={`tfBtn ${tf[0] === timeframe[0] && 'active-tfBtn'}`} key={tf[0]} onClick={() => setTimeframe(tf)}>{tf[0]}</button>)}
       </div>

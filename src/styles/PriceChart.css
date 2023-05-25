@@ -40,3 +40,13 @@ svg {
 .active-tfBtn {
   background-color: goldenrod;
 }
+
+.toolTip {
+  position: relative;
+  width: fit-content;
+  height: 0;
+}
+
+.tooltip-data {
+  font-size: 0.9rem;
+}
