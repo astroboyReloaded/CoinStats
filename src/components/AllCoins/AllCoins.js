@@ -31,7 +31,7 @@ const AllCoins = () => {
           </header>
           <main className="coin-tbody">
             {render.map((coin) => (
-            <CoinArticleLink
+              <CoinArticleLink
                 key={coin.id}
                 id={coin.id}
                 mrktCapRank={coin.market_cap_rank}
