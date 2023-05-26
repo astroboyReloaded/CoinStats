@@ -1,5 +1,5 @@
-import SearchBar from '../SearchBar';
-import GlobalData from '../GlobalData';
+import SearchBar from './SearchBar';
+import GlobalData from './GlobalData';
 import CoinArticleLink from './CoinArticleLink';
 import '../../styles/AllCoins.css';
 import useFetchAllCoins from '../../hooks/allCoins-hooks/useFetchAllCoins';

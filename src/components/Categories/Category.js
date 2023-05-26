@@ -27,7 +27,7 @@ const Category = ({
       <p className="categories-data-title">
         MC change 24h:
       </p>
-      <data className={`categories-data ${mrktCapChange24h > 0 ? 'green' : 'red'}`}>{`${mrktCapChange24h?.toLocaleString().replace('-', '')}%`}</data>
+      <data className={`categories-data ${mrktCapChange24h > 0 ? 'green' : 'red'}`}>{`${mrktCapChange24h?.toLocaleString().replace('-', '') || 'N/A'}%`}</data>
     </article>
   </>
 );
