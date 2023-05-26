@@ -29,3 +29,11 @@ img {
 .categories-data {
   color: gainsboro;
 }
+
+.red {
+  color: rgb(255, 39, 84);
+}
+
+.green {
+  color: yellowgreen;
+}
