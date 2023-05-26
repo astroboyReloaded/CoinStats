@@ -1,55 +1,31 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import parser from 'html-react-parser';
-import {
-  fetchCoinDetails,
-  clearCoinDetails,
-} from '../redux/coin-details/coinDetailsSlice';
 import PriceConvertion from './PriceConvertion';
 import '../styles/CoinDetails.css';
-import useSetThisCoinInFilter from '../hooks/useSetThisCoinInFilter';
+import useFetchCoinDetails from '../hooks/coinDetails-hooks/useFetchCoinDetails';
 
 const CoinDetails = () => {
   const { id } = useParams();
-  const {
-    coinDetails,
-    isLoading,
-    error,
-  } = useSelector(
-    (state) => state.coinDetails,
-  );
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCoinDetails(id));
-    return () => {
-      dispatch(clearCoinDetails());
-    };
-  }, [dispatch, id]);
-
-  useSetThisCoinInFilter(coinDetails);
-
-  const coin = coinDetails;
-
-  const {
+  const [
     symbol,
     name,
     description,
     image,
-    market_data: marketData,
-  } = coinDetails;
+    marketData,
+    isLoading,
+    error,
+    ready,
+  ] = useFetchCoinDetails(id);
 
   return (
     <main className="coin-main">
       {isLoading && <p>...loading</p>}
       {error && <p>Ups! There was an error...</p>}
-      {coin !== 'Coin Details' && (
+      {ready && (
         <article>
           <header className="coin-header">
             <Link className="arrow-back" to="/" />
-            <img className="header-coin-image" src={image.small} alt={name} />
+            <img className="header-coin-image" src={image} alt={name} />
             <h1 className="coin-name">{name}</h1>
             <h2 className="coin-symbol">{`(${symbol?.toUpperCase()})`}</h2>
           </header>
