@@ -1,20 +1,9 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchCategories } from '../redux/categories/categoriesSlice';
+import useFetchCategories from '../hooks/categories-hooks/useFetchCategories';
 import '../styles/Categories.css';
 
 const Categories = () => {
-  const { categories, isLoading, error } = useSelector(
-    (state) => state.categories,
-  );
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    if (categories !== 'Categories') return;
-    dispatch(fetchCategories());
-  }, [dispatch, categories]);
-
+  const [categories, isLoading, error] = useFetchCategories();
+  console.log(categories);
   if (isLoading) {
     return <p>Loading...</p>;
   }
@@ -31,7 +20,7 @@ const Categories = () => {
             <h1 className="category-name">{category.name}</h1>
             <div>
               {category.top_3_coins.map((image) => (
-                <img key={image} src={image} alt={image} />
+                <img key={Math.random()} src={image} alt={image} />
               ))}
             </div>
             <p className="categories-data-title">
