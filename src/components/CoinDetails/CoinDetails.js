@@ -1,5 +1,4 @@
 import { useParams } from 'react-router-dom';
-// import parser from 'html-react-parser';
 // import PriceConvertion from '../PriceConvertion';
 import { useSelector } from 'react-redux';
 import useFetchCoinDetails from '../../hooks/coinDetails-hooks/useFetchCoinDetails';
@@ -8,6 +7,7 @@ import CoinHeader from './CoinHeader';
 import CoinPrice from './CoinPrice';
 import PriceChangePerc from './PriceChangePerc';
 import CoinMainData from './CoinMainData';
+import CoinDescription from './CoinDescription';
 
 const CoinDetails = () => {
   const { id } = useParams();
@@ -26,6 +26,7 @@ const CoinDetails = () => {
           <CoinPrice />
           <PriceChangePerc />
           <CoinMainData />
+          <CoinDescription />
         </main>
       </div>
     );
