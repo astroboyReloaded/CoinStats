@@ -7,6 +7,7 @@ import '../../styles/CoinDetails.css';
 import CoinHeader from './CoinHeader';
 import CoinPrice from './CoinPrice';
 import PriceChangePerc from './PriceChangePerc';
+import CoinMainData from './CoinMainData';
 
 const CoinDetails = () => {
   const { id } = useParams();
@@ -24,6 +25,7 @@ const CoinDetails = () => {
         <main className="coin-main-section">
           <CoinPrice />
           <PriceChangePerc />
+          <CoinMainData />
         </main>
       </div>
     );
