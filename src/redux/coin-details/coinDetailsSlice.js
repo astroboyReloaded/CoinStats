@@ -48,7 +48,7 @@ const coinDetailsSlice = createSlice({
             image: data.image.small,
             currentPrice: data.market_data.current_price,
             marketData: data.market_data,
-            description: data.description,
+            description: data.description.en,
           },
           ready: true,
         });

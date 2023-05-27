@@ -19,7 +19,7 @@ const CoinMainData = () => {
             <tr className="coin-MainData-tr">
               {Object.keys(coinMainData).map((cmdkey, i) => (
                 <td key={cmdkey} className="coinMD-td">
-                  {`${genSymbol(i)}${coinMainData[cmdkey].toLocaleString()}`}
+                  {`${genSymbol(i)}${coinMainData[cmdkey]?.toLocaleString()}`}
                 </td>
               ))}
             </tr>
