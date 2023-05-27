@@ -1,8 +1,8 @@
 import { Link, useParams } from 'react-router-dom';
 import parser from 'html-react-parser';
-import PriceConvertion from './PriceConvertion';
-import '../styles/CoinDetails.css';
-import useFetchCoinDetails from '../hooks/coinDetails-hooks/useFetchCoinDetails';
+// import PriceConvertion from '../PriceConvertion';
+import '../../styles/CoinDetails.css';
+import useFetchCoinDetails from '../../hooks/coinDetails-hooks/useFetchCoinDetails';
 
 const CoinDetails = () => {
   const { id } = useParams();
@@ -39,7 +39,7 @@ const CoinDetails = () => {
               </data>
               <data className={`mrkt-cap-chng-perc ${marketData.market_cap_change_percentage_24h > 0 ? 'green' : 'red'}`}>{`${marketData.market_cap_change_percentage_24h.toFixed(2).replace('-', '')}%`}</data>
             </section>
-            <PriceConvertion />
+            {/* <PriceConvertion /> */}
             <section className="priceChange-percentages">
               <table className="price-percentage-table">
                 <thead>

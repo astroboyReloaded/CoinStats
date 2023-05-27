@@ -1,11 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import useConvertion from '../hooks/useConvertion';
+import { handleValue, cleanValue } from '../hooks/helperFuncs';
 import '../styles/PriceConvertion.css';
 
 const PriceConvertion = () => {
-  const { symbol, image, currentPrices } = useSelector(
-    (state) => state.priceConvertion.coinInFilter,
+  const { symbol, image, coinDetails: { currentPrice } } = useSelector(
+    (state) => state.coinDetails,
   );
 
   const [
@@ -14,23 +15,7 @@ const PriceConvertion = () => {
     handleThisCoinAmount,
     handleExchangeAmount,
     handleExchangeRate,
-  ] = useConvertion(currentPrices);
-
-  const handleValue = (e, handleWith) => {
-    const amount = parseFloat(e.target.value);
-    if (Number.isNaN(amount)) {
-      handleWith(0);
-    } else {
-      handleWith(amount);
-    }
-  };
-
-  // replace 00 for 0 or 0[1-9] for [1-9] (with help from Copilot  :D)
-  const cleanValue = (value) => {
-    const regex = /(^0{2})|(^0[1-9])/;
-    const stringValue = value.toString(); // <-- Idea adapted from GPT propmpt result
-    return stringValue.replace(regex, (match) => match[match.length - 1]);
-  };
+  ] = useConvertion(currentPrice);
 
   return (
     <form className="price-convertion-form">

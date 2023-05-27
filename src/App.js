@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import AllCoins from './components/AllCoins/AllCoins';
-import CoinDetails from './components/CoinDetails';
+import CoinDetails from './components/CoinDetails/CoinDetails';
 import Categories from './components/Categories/Categories';
 import View from './components/View';
 import NoMatch from './components/NoMatch';
