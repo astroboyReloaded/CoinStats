@@ -46,7 +46,7 @@ const PriceConvertion = () => {
             onChange={(e) => handleExchangeRate(e.target.value)}
             className="selectCurrency filter-input"
           >
-            {currentPrices && Object.keys(currentPrices).map((symbol) => (
+            {currentPrice && Object.keys(currentPrice).map((symbol) => (
               <option
                 key={symbol}
                 value={symbol}
