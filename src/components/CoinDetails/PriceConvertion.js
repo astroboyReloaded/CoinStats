@@ -8,7 +8,7 @@ const PriceConvertion = () => {
   const { coinDetails: { currentPrice, symbol, image } } = useSelector(
     (state) => state.coinDetails,
   );
-  console.log(image, 'component');
+
   const [
     thisCoinAmount,
     exchangeAmount,
