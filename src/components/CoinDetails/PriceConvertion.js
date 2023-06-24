@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import useConvertion from '../../hooks/useConvertion';
 import '../../styles/PriceConvertion.css';
 import AmountInput from './PriceConvertion/AmountInput';
+import CurrencyFilter from './PriceConvertion/CurrencyFilter';
 
 const PriceConvertion = () => {
   const { coinDetails: { currentPrice, symbol, image } } = useSelector(
@@ -25,7 +26,7 @@ const PriceConvertion = () => {
           amount={thisCoinAmount}
           handleWith={handleThisCoinAmount}
         />
-        <img className="filter-coin-image" src={image} alt="" />
+        <img className="filter-coin-image" src={image} alt={symbol} />
         {symbol?.toUpperCase()}
       </label>
       <label htmlFor="exAmount" className="filter-label">
@@ -34,24 +35,7 @@ const PriceConvertion = () => {
           amount={exchangeAmount}
           handleWith={handleExchangeAmount}
         />
-        <label
-          htmlFor="currencies"
-        >
-          <select
-            id="currencies"
-            onChange={(e) => handleExchangeRate(e.target.value)}
-            className="selectCurrency filter-input"
-          >
-            {currentPrice && Object.keys(currentPrice).map((symbol) => (
-              <option
-                key={symbol}
-                value={symbol}
-              >
-                {symbol.toUpperCase()}
-              </option>
-            ))}
-          </select>
-        </label>
+        <CurrencyFilter handleExchangeRate={handleExchangeRate} />
       </label>
     </form>
   );
