@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import useConvertion from '../../hooks/useConvertion';
-import { handleValue, cleanValue } from '../../hooks/helperFuncs';
 import '../../styles/PriceConvertion.css';
+import AmountInput from './PriceConvertion/AmountInput';
 
 const PriceConvertion = () => {
   const { coinDetails: { currentPrice, symbol, image } } = useSelector(
@@ -20,23 +20,19 @@ const PriceConvertion = () => {
   return (
     <form className="price-convertion-form">
       <label htmlFor="thisCoinAmount" className="filter-label">
-        <input
+        <AmountInput
           id="thisCoinAmount"
-          className="thisCoinAmount convert-input filter-input"
-          type="number"
-          value={cleanValue(thisCoinAmount)}
-          onInput={(e) => handleValue(e, handleThisCoinAmount)}
+          amount={thisCoinAmount}
+          handleWith={handleThisCoinAmount}
         />
         <img className="filter-coin-image" src={image} alt="" />
         {symbol?.toUpperCase()}
       </label>
       <label htmlFor="exAmount" className="filter-label">
-        <input
+        <AmountInput
           id="exAmount"
-          type="number"
-          className="exAmount convert-input filter-input"
-          value={cleanValue(exchangeAmount)}
-          onInput={(e) => handleValue(e, handleExchangeAmount)}
+          amount={exchangeAmount}
+          handleWith={handleExchangeAmount}
         />
         <label
           htmlFor="currencies"
