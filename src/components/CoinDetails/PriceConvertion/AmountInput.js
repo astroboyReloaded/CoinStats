@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { handleValue, cleanValue } from '../../../hooks/helperFuncs';
+
 
 const AmountInput = ({ id, amount, handleWith }) => (
   <input
