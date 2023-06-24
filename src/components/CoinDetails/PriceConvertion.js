@@ -1,14 +1,14 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import useConvertion from '../hooks/useConvertion';
-import { handleValue, cleanValue } from '../hooks/helperFuncs';
-import '../styles/PriceConvertion.css';
+import useConvertion from '../../hooks/useConvertion';
+import { handleValue, cleanValue } from '../../hooks/helperFuncs';
+import '../../styles/PriceConvertion.css';
 
 const PriceConvertion = () => {
-  const { symbol, image, coinDetails: { currentPrice } } = useSelector(
+  const { coinDetails: { currentPrice, symbol, image } } = useSelector(
     (state) => state.coinDetails,
   );
-
+  console.log(image, 'component');
   const [
     thisCoinAmount,
     exchangeAmount,

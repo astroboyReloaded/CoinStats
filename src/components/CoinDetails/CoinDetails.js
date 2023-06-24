@@ -5,6 +5,7 @@ import useFetchCoinDetails from '../../hooks/coinDetails-hooks/useFetchCoinDetai
 import '../../styles/CoinDetails.css';
 import CoinHeader from './CoinHeader';
 import CoinPrice from './CoinPrice';
+import PriceConvertion from './PriceConvertion';
 import PriceChangePerc from './PriceChangePerc';
 import CoinMainData from './CoinMainData';
 import CoinDescription from './CoinDescription';
@@ -24,6 +25,7 @@ const CoinDetails = () => {
         <CoinHeader />
         <main className="coin-main-section">
           <CoinPrice />
+          <PriceConvertion />
           <PriceChangePerc />
           <CoinMainData />
           <CoinDescription />

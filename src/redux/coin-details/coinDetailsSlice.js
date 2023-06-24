@@ -37,18 +37,18 @@ const coinDetailsSlice = createSlice({
         ...state,
         isLoading: true,
       }))
-      .addCase(fetchCoinDetails.fulfilled, (state, action) => {
-        const data = action.payload;
+      .addCase(fetchCoinDetails.fulfilled, (state, { payload }) => {
+        console.log(payload.image.small, 'slice');
         return ({
           ...state,
           isLoading: false,
           coinDetails: {
-            name: data.name,
-            symbol: data.symbol,
-            image: data.image.small,
-            currentPrice: data.market_data.current_price,
-            marketData: data.market_data,
-            description: data.description.en,
+            name: payload.name,
+            symbol: payload.symbol,
+            image: payload.image.small,
+            currentPrice: payload.market_data.current_price,
+            marketData: payload.market_data,
+            description: payload.description.en,
           },
           ready: true,
         });
