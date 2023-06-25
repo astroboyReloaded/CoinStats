@@ -2,7 +2,7 @@ import renderer from 'react-test-renderer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import Categories from '../components/Categories';
+import Categories from '../components/Categories.js';
 
 it('renders Categories', () => {
   const tree = renderer
