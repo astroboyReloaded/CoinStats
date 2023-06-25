@@ -1,4 +1,4 @@
-/// ////// For use in PriceConvertion:
+/// ////// For use in ThisCoinAmount/ExchangeAmount:
 // makes sure that value in filter !isNAN
 export const handleValue = (e, handleWith) => {
   const amount = parseFloat(e.target.value);
@@ -15,6 +15,9 @@ export const cleanValue = (value) => {
   const stringValue = value.toString();
   return stringValue.replace(regex, (match) => match[match.length - 1]);
 };
+
+/// //////// For use in useConvertion:
+export const fixFloat = (amount) => (parseFloat(amount.toFixed(8)));
 
 /// //////// For use in CoinMainData:
 // Returns the corresponding symbol to go at start of data value
