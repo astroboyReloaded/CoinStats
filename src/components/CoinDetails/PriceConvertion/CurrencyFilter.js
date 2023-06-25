@@ -1,9 +1,8 @@
 import { useSelector } from 'react-redux';
-import useConvertion from '../../../hooks/useConvertion';
+import PropTypes from 'prop-types';
 
-const CurrencyFilter = () => {
+const CurrencyFilter = ({ handleExchangeRate }) => {
   const { coinDetails: { currentPrice } } = useSelector((state) => state.coinDetails);
-  const { handleExchangeRate } = useConvertion();
 
   return (
     <label
@@ -28,3 +27,7 @@ const CurrencyFilter = () => {
 };
 
 export default CurrencyFilter;
+
+CurrencyFilter.propTypes = {
+  handleExchangeRate: PropTypes.func.isRequired,
+};

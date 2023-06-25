@@ -3,8 +3,8 @@ import { useSelector } from 'react-redux';
 import { fixFloat } from './helperFuncs';
 
 const useConvertion = () => {
-  const { currentPrice: prices } = useSelector(
-    (state) => state.coinDetails.coinDetails,
+  const { coinDetails: { symbol, image, currentPrice: prices } } = useSelector(
+    (state) => state.coinDetails,
   );
   const [thisCoinAmount, setThisCoinAmount] = useState(1);
   const [exchangeRate, setExchangeRate] = useState(0);
@@ -42,6 +42,8 @@ const useConvertion = () => {
 
   return {
     thisCoinAmount,
+    symbol,
+    image,
     exchangeAmount,
     handleThisCoinAmount,
     handleExchangeAmount,

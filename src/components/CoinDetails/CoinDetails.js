@@ -4,7 +4,7 @@ import useFetchCoinDetails from '../../hooks/coinDetails-hooks/useFetchCoinDetai
 import '../../styles/CoinDetails.css';
 import CoinHeader from './CoinHeader';
 import CoinPrice from './CoinPrice';
-import PriceConvertion from './PriceConvertion.js';
+import PriceConvertion from './PriceConvertion/PriceConvertion';
 import PriceChangePerc from './PriceChangePerc';
 import CoinMainData from './CoinMainData';
 import CoinDescription from './CoinDescription';
