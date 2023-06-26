@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setSearch } from '../redux/all-coins/allCoinsSlice';
-import '../styles/SearchBar.css';
+import { setSearch } from '../../redux/all-coins/allCoinsSlice';
+import '../../styles/SearchBar.css';
 
 const SearchBar = () => {
   const handleSubmit = (e) => e.preventDefault();
