@@ -1,8 +1,8 @@
 import { Provider } from 'react-redux';
+import { render, screen } from '@testing-library/react';
 import AllCoins from '../components/AllCoins';
 import { fetchAllCoins } from '../redux/all-coins/allCoinsSlice';
 import store from '../redux/store';
-import { render, screen } from '@testing-library/react';
 
 describe('fetchAllCoins', () => {
   it('fetch all coins should be fulfilled', async () => {
@@ -19,5 +19,5 @@ describe('fetchAllCoins', () => {
     </Provider>);
     const coinArticles = await screen.findAllByRole('article');
     expect(coinArticles).toHaveLength(100);
-  })
+  });
 });

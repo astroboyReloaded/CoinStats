@@ -3,6 +3,7 @@ import GlobalData from './GlobalData';
 import CoinArticleLink from './CoinArticleLink';
 import '../../styles/AllCoins.css';
 import useFetchAllCoins from '../../hooks/allCoins-hooks/useFetchAllCoins';
+import Footer from '../Footer';
 
 const AllCoins = () => {
   const [allCoins, results, isLoading, error] = useFetchAllCoins();
@@ -45,6 +46,7 @@ const AllCoins = () => {
             ))}
           </main>
         </section>
+        <Footer />
       </main>
     );
   }

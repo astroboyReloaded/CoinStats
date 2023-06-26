@@ -8,6 +8,7 @@ import PriceConvertion from './PriceConvertion/PriceConvertion';
 import PriceChangePerc from './PriceChangePerc';
 import CoinMainData from './CoinMainData';
 import CoinDescription from './CoinDescription';
+import Footer from '../Footer';
 
 const CoinDetails = () => {
   const { id } = useParams();
@@ -29,6 +30,7 @@ const CoinDetails = () => {
           <CoinMainData />
           <CoinDescription />
         </main>
+        <Footer />
       </div>
     );
   }

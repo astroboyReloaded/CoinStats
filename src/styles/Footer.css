@@ -1,0 +1,23 @@
+.footer {
+  position: fixed;
+  bottom: -1px;
+  left: 0;
+  background-color: yellowgreen;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 6px 6px 0 0;
+  border: 1px solid goldenrod;
+  font-size: 0.75rem;
+  padding-block: 0.3rem 0.18rem;
+  color: black;
+}
+
+span {
+  margin-inline: auto;
+}
+
+a {
+  margin-left: 0.3rem;
+  color: white;
+}
