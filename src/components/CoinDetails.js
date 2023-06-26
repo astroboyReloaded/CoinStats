@@ -9,7 +9,6 @@ import {
 import PriceConvertion from './PriceConvertion';
 import '../styles/CoinDetails.css';
 import useSetThisCoinInFilter from '../hooks/useSetThisCoinInFilter';
-import PriceChart from './PriceChart';
 
 const CoinDetails = () => {
   const { id } = useParams();

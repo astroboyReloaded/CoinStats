@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
-  coinDetails: 'Coin Details',
+  coinDetails: {},
   isLoading: false,
   error: '',
+  ready: false,
 };
 
 export const fetchCoinDetails = createAsyncThunk(
@@ -36,10 +37,18 @@ const coinDetailsSlice = createSlice({
         ...state,
         isLoading: true,
       }))
-      .addCase(fetchCoinDetails.fulfilled, (state, action) => ({
+      .addCase(fetchCoinDetails.fulfilled, (state, { payload }) => ({
         ...state,
         isLoading: false,
-        coinDetails: action.payload,
+        coinDetails: {
+          name: payload.name,
+          symbol: payload.symbol,
+          image: payload.image.small,
+          currentPrice: payload.market_data.current_price,
+          marketData: payload.market_data,
+          description: payload.description.en,
+        },
+        ready: true,
       }))
       .addCase(fetchCoinDetails.rejected, (state, action) => ({
         ...state,

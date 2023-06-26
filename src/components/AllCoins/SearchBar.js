@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setSearch } from '../redux/all-coins/allCoinsSlice';
-import '../styles/SearchBar.css';
+import { setSearch } from '../../redux/all-coins/allCoinsSlice';
+import '../../styles/SearchBar.css';
 
 const SearchBar = () => {
   const handleSubmit = (e) => e.preventDefault();
@@ -10,7 +10,7 @@ const SearchBar = () => {
 
   const handleChange = (e) => {
     const search = e.target.value;
-    const results = data.filter((item) => (
+    const results = data?.filter((item) => (
       item.id.indexOf(search.toLowerCase()) > -1
       || item.symbol.indexOf(search.toLowerCase()) > -1));
     const searchResults = {

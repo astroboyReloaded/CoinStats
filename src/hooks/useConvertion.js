@@ -1,18 +1,21 @@
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { fixFloat } from './helperFuncs';
 
-const fixFloat = (amount) => (parseFloat(amount.toFixed(8)));
-
-const useConvertion = (prices) => {
+const useConvertion = () => {
+  const { coinDetails: { symbol, image, currentPrice: prices } } = useSelector(
+    (state) => state.coinDetails,
+  );
   const [thisCoinAmount, setThisCoinAmount] = useState(1);
   const [exchangeRate, setExchangeRate] = useState(0);
   const [exchangeAmount, setExchangeAmount] = useState(0);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const exRate = prices?.aed;
     setExchangeRate(exRate);
   }, [prices]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     const exAmount = exchangeRate * thisCoinAmount;
     setExchangeAmount(fixFloat(exAmount));
     // eslint-disable-next-line
@@ -37,13 +40,15 @@ const useConvertion = (prices) => {
     setExchangeAmount(fixFloat(exAmount));
   };
 
-  return [
+  return {
     thisCoinAmount,
+    symbol,
+    image,
     exchangeAmount,
     handleThisCoinAmount,
     handleExchangeAmount,
     handleExchangeRate,
-  ];
+  };
 };
 
 export default useConvertion;
