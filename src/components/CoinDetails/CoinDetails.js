@@ -8,6 +8,9 @@ import PriceConvertion from './PriceConvertion/PriceConvertion';
 import PriceChangePerc from './PriceChangePerc';
 import CoinMainData from './CoinMainData';
 import CoinDescription from './CoinDescription';
+import Footer from '../Footer';
+import Loading from '../Loading';
+import PriceChart from './PriceChart';
 
 const CoinDetails = () => {
   const { id } = useParams();
@@ -16,7 +19,7 @@ const CoinDetails = () => {
   useFetchCoinDetails(id);
 
   if (isLoading) {
-    return <p>...loading</p>;
+    return <Loading />;
   }
   if (ready) {
     return (
@@ -25,10 +28,12 @@ const CoinDetails = () => {
         <main className="coin-main-section">
           <CoinPrice />
           <PriceConvertion />
+          <PriceChart coinID={id} />
           <PriceChangePerc />
           <CoinMainData />
           <CoinDescription />
         </main>
+        <Footer />
       </div>
     );
   }

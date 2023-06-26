@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders <SearchBar> and <GlobalData> components 1`] = `
+<p
+  className="All-Loading"
+>
+  Loading...
+</p>
+`;
+
+exports[`renders AllCoins component 1`] = `"All Coins"`;

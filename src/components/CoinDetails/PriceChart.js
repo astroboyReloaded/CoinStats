@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import * as d3 from 'd3';
 import PropTypes from 'prop-types';
-import '../styles/PriceChart.css';
+import '../../styles/PriceChart.css';
 
 const PriceChart = ({ coinID }) => {
   const w = window.innerWidth;

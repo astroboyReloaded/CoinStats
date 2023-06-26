@@ -10,9 +10,9 @@ const SearchBar = () => {
 
   const handleChange = (e) => {
     const search = e.target.value;
-    const results = data?.filter((item) => (
+    const results = data !== 'All Coins' ? data.filter((item) => (
       item.id.indexOf(search.toLowerCase()) > -1
-      || item.symbol.indexOf(search.toLowerCase()) > -1));
+      || item.symbol.indexOf(search.toLowerCase()) > -1)) : [];
     const searchResults = {
       search,
       results,
