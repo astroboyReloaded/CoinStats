@@ -3,7 +3,7 @@
   bottom: -1px;
   left: 0;
   background-color: yellowgreen;
-  width: 100%;
+  width: calc(100% - 2px);
   display: flex;
   justify-content: space-between;
   border-radius: 6px 6px 0 0;
@@ -17,7 +17,7 @@ span {
   margin-inline: auto;
 }
 
-a {
+.foot-link {
   margin-left: 0.3rem;
   color: white;
 }

@@ -7,6 +7,7 @@ const Footer = () => (
       Created by
       <Link
         to="https://github.com/astroboyreloaded"
+        className="foot-link"
       >
         astroboyReloaded
       </Link>
@@ -15,6 +16,7 @@ const Footer = () => (
       Powered by
       <Link
         to="https://www.coingecko.com/en/api"
+        className="foot-link"
       >
         Coin Gecko
       </Link>

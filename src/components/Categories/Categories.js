@@ -1,12 +1,13 @@
 import useFetchCategories from '../../hooks/categories-hooks/useFetchCategories';
 import '../../styles/Categories.css';
+import Loading from '../Loading';
 import Category from './Category';
 
 const Categories = () => {
   const [categories, isLoading, error] = useFetchCategories();
 
   if (isLoading) {
-    return <p>Loading...</p>;
+    return <Loading />;
   }
 
   if (error) {

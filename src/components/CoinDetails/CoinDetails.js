@@ -9,6 +9,7 @@ import PriceChangePerc from './PriceChangePerc';
 import CoinMainData from './CoinMainData';
 import CoinDescription from './CoinDescription';
 import Footer from '../Footer';
+import Loading from '../Loading';
 
 const CoinDetails = () => {
   const { id } = useParams();
@@ -17,7 +18,7 @@ const CoinDetails = () => {
   useFetchCoinDetails(id);
 
   if (isLoading) {
-    return <p>...loading</p>;
+    return <Loading />;
   }
   if (ready) {
     return (

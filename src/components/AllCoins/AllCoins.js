@@ -4,12 +4,13 @@ import CoinArticleLink from './CoinArticleLink';
 import '../../styles/AllCoins.css';
 import useFetchAllCoins from '../../hooks/allCoins-hooks/useFetchAllCoins';
 import Footer from '../Footer';
+import Loading from '../Loading';
 
 const AllCoins = () => {
   const [allCoins, results, isLoading, error] = useFetchAllCoins();
 
   if (isLoading) {
-    return <p className="All-Loading">Loading...</p>;
+    return <Loading />;
   }
 
   if (error) {
