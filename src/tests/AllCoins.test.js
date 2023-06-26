@@ -2,7 +2,7 @@ import renderer from 'react-test-renderer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import AllCoins from '../components/AllCoins';
+import AllCoins from '../components/AllCoins.js';
 
 it('renders AllCoins', () => {
   const tree = renderer

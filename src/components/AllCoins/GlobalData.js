@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import {
   fetchGlobalData,
   clearGlobalData,
-} from '../redux/global-data/globalDataSlice';
-import '../styles/GlobalData.css';
+} from '../../redux/global-data/globalDataSlice';
+import '../../styles/GlobalData.css';
 
 const GlobalData = () => {
   const { globalData, isLoading, error } = useSelector(
