@@ -2,7 +2,7 @@ import renderer from 'react-test-renderer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from '../redux/store';
-import Categories from '../components/Categories/Categories.js';
+import Categories from '../components/Categories/Categories';
 import View from '../components/View';
 
 it('renders Categories', () => {

@@ -2,9 +2,9 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
+import { act } from 'react-test-renderer';
 import SearchBar from '../components/AllCoins/SearchBar';
 import store from '../redux/store';
-import { act } from 'react-test-renderer';
 
 describe('Search Bar', () => {
   it('Search value is updated correctly', () => {
