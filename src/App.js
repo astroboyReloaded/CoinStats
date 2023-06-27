@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+import { Routes, Route } from 'react-router-dom';
+import AllCoins from './components/AllCoins/AllCoins';
+import CoinDetails from './components/CoinDetails/CoinDetails';
+import Categories from './components/Categories/Categories';
+import View from './components/View';
+import NoMatch from './components/NoMatch';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Routes>
+    <Route path="/" element={<View />}>
+      <Route index element={<AllCoins />} />
+      <Route path="/categories" element={<Categories />} />
+      <Route path="*" element={<NoMatch />} />
+    </Route>
+    <Route path="/coin-details/:id" element={<CoinDetails />} />
+  </Routes>
+);
 
 export default App;

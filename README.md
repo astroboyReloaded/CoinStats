@@ -1,70 +1,176 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<div align="center">
+  <img src="./public/icons/GeckoCoin-logo.jpg" alt="logo" width="120"  height="auto" />
+  <br/>
 
-## Available Scripts
+  <h3><b>CoinStats</b></h3>
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+<!-- TABLE OF CONTENTS -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# 📗 Table of Contents
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [📖 About the Project](#about-project)
+  - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+    - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
+  - [Prerequisites](#prerequisites)
+  - [Install](#install)
+  - [Usage](#usage)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐️ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-### `npm test`
+<!-- PROJECT DESCRIPTION -->
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 📖 Hello Microverse <a name="about-project"></a>
 
-### `npm run build`
+**CoinStats** is a React/Redux SPA that fetches and renders data from the [CoinGecko API](https://www.coingecko.com/en/api).
+It allows users to see market data for each of the top 100 coins in the crypto Market and Features a Convertion Filter that alows you to see te value of each coin in different currencies, as well as converting different amounts (filter works in a two way fashion).
+To easily find a coin you are interested, use the search bar filter in the main page.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 🛠 Built With <a name="built-with"></a>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Tech Stack <a name="tech-stack"></a>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<details>
+  <summary>Client</summary>
+  <ul>
+    <li><a href="https://www.w3.org/html/">HTML</a></li>
+    <li><a href="https://www.w3.org/Style/CSS/Overview.en.html">SCSS</a></li>
+    <li><a href="https://react.dev/">React</a></li>
+    <li><a href="https://redux.js.org/">Redux</a></li>
+  </ul>
+</details>
 
-### `npm run eject`
+<details>
+  <summary>Server</summary>
+  <ul>
+    <li><a href="https://render.com/">render</a></li>
+  </ul>
+</details>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<!-- Features -->
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Key Features <a name="key-features"></a>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Market data for:
+  - **Global Market Cap**
+  - **24hr Volume**
+  - **Top 100 cryptocurrencies**
+- Main Market data for each of the Top 100 criptocurrencies
+- **Price convertion filter** to multiple currencies for each of the Top 100 coins. **Filter handles different amounts in both sides**.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<!-- LIVE DEMO -->
 
-## Learn More
+ ## 🚀 Live Demo <a name="live-demo"></a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[Live Demo Link](https://coinstats-nd4q.onrender.com)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Presentation Video](https://www.loom.com/share/85453aa7d18b4ed6b72e51b30c49149a)
 
-### Code Splitting
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- GETTING STARTED -->
 
-### Analyzing the Bundle Size
+## 💻 Getting Started <a name="getting-started"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Want to build up from this project?
 
-### Making a Progressive Web App
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+In order to run this project you need:
 
-### Advanced Configuration
+- Have [npm](https://www.npmjs.com/package/npm) installed in your project:
+  `curl -qL https://www.npmjs.com/install.sh | sh`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Have [Node.js](https://nodejs.org/en) installed.
+  Run:
 
-### Deployment
+```sh
+node -v
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+to check if you have Node installed and what vertion it is. If not, follow the steps in the official website.
 
-### `npm run build` fails to minify
+### Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Clone this repository to your desired folder:
+
+```sh
+git clone https://github.com/astroboyReloaded/CoinStats.git
+```
+
+or
+
+`git clone git@github.com:astroboyReloaded/CoinStats.git` <-- _Only if you have [SSH keys configured](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) on your GitHub account_.
+
+### Install:
+
+run the `npm install` command in your console.
+
+### Usage
+
+Users can look for their favorite coin using the searchbar or escrolling on the **All Coins** section and see basic market data about it. On click on any coin, users go to a **Coin Details** page where they can see Critical market data about the specific coin, as well as using the convertion filter to convert different amounts of the coin into many other currencies, currently only supportin many fiat currencies and a few cryptocurrencies, the amounts can be changed on both sides of the filter.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- AUTHORS -->
+
+## 👥 Authors <a name="authors"></a>
+
+> 👤 **AstroboyReloaded**
+
+- GitHub: [@astroboyReloaded](https://github.com/astroboyReloaded)
+- Twitter: [@astroboyReload](https://twitter.com/astroboyReload)
+- LinkedIn: [Alex Muñoz](https://www.linkedin.com/in/astroboyreloaded/)
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- Price charts for each coin in different timeframes.
+- Critical Market data in different currencies for each coin.
+- Data about each of the top 3 coins for each category in **Categories**
+
+<!-- CONTRIBUTING -->
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+> If you like this project please give me a star on GitHub.
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## 🙏 Acknowledgments <a name="acknowledgements"></a>
+
+I would like to thank [Microverse](https://www.microverse.org/) for teaching me these tools, my teammates who share great advice.
+[CoinGecko API](https://www.coingecko.com/en/api)
+Copilot and Chat GPT used for cleanValue function in convertion filter. (lines 31-35 of PriceConvertion.js).
+[NightCafé](https://nightcafe.studio/) AI Art Generator for creating the logo for this app.
+App design inspired on [Ballhead App](https://www.behance.net/gallery/31579789/Ballhead-App-%28Free-PSDs%29) by Nelson Saka.
+
+<!-- LICENSE -->
+
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

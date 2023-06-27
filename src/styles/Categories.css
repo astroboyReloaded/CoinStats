@@ -1,0 +1,39 @@
+.categories-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category {
+  width: calc(50% - 0.6rem - 2px);
+  margin: -1px -1px 0 0;
+  border: 1px solid goldenrod;
+  padding: 0.3rem;
+  text-align: center;
+}
+
+.category-name {
+  font-size: 1rem;
+  color: goldenrod;
+}
+
+img {
+  width: 2.1rem;
+}
+
+.categories-data-title {
+  margin: 0;
+  color: goldenrod;
+}
+
+.categories-data {
+  color: gainsboro;
+}
+
+.red {
+  color: rgb(255, 39, 84);
+}
+
+.green {
+  color: yellowgreen;
+}

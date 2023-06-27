@@ -1,0 +1,42 @@
+.global-data-section {
+  display: flex;
+  margin: 0;
+  padding: 0.3rem;
+  justify-content: space-around;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.global-data-title {
+  margin: 0;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  border-left: 6px solid yellowgreen;
+  background-color: #20223f;
+  padding: 0.3rem 0.6rem;
+  text-align: left;
+  font-size: 0.69rem;
+  color: goldenrod;
+}
+
+.marketCap {
+  margin-right: 0.3rem;
+  width: calc(54% - 00.36rem);
+}
+
+.vol-24H {
+  width: 45%;
+}
+
+.global-data {
+  color: gainsboro;
+  font-size: 0.72rem;
+}
+
+.MC-chng-perc {
+  margin-left: 0.3rem;
+}
+
+p {
+  color: white;
+}
