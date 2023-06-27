@@ -137,9 +137,8 @@ Users can look for their favorite coin using the searchbar or escrolling on the 
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Top 100 cryptocurrencies in convertion filter.
-- Critical Market data in differents currencies for each coin.
-- Price charts for each coin.
+- Price charts for each coin in different timeframes.
+- Critical Market data in different currencies for each coin.
 - Data about each of the top 3 coins for each category in **Categories**
 
 <!-- CONTRIBUTING -->
