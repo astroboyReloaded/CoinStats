@@ -12,7 +12,9 @@ it('renders AllCoins component', () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path="/" element={<AllCoins />} />
+            <Route path="/">
+              <Route index element={<AllCoins />} />
+            </Route>
           </Routes>
         </Provider>
       </BrowserRouter>,

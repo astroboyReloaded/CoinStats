@@ -1,15 +1,25 @@
 import renderer from 'react-test-renderer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from '../redux/store.js';
 import CoinDetails from '../components/CoinDetails/CoinDetails.js';
+import View from '../components/View.js';
+import AllCoins from '../components/AllCoins/AllCoins.js';
+
 
 it('renders CoinDetails', () => {
   const tree = renderer
     .create(
-      <BrowserRouter>
-        <Routes>
-          <Route path="/coin-details/:id" element={<CoinDetails />} />
-        </Routes>
-      </BrowserRouter>,
+      <Provider store={store}>
+        <BrowserRouter>        
+          <Routes>
+            <Route path="/" element={<View />}>
+              <Route index element={<AllCoins />} />
+            </Route>
+            <Route path="/coin-details/:id" element={<CoinDetails />} />
+          </Routes>
+        </BrowserRouter>,
+      </Provider>
     )
     .toJSON();
   expect(tree).toMatchSnapshot();
