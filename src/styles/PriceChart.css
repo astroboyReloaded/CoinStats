@@ -43,7 +43,6 @@ svg {
 
 .toolTip {
   position: relative;
-  width: fit-content;
   height: 0;
 }
 
