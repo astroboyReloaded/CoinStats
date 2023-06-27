@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import '../../styles/PriceChart.css';
 
 const PriceChart = ({ coinID }) => {
-  const w = window.innerWidth;
+  const w = window.innerWidth < 425 ? window.innerWidth : 425;
   const h = w * 0.6;
   const p = 36;
   const svg = d3.select('svg');
