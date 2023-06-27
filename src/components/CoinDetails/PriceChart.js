@@ -4,12 +4,21 @@ import PropTypes from 'prop-types';
 import '../../styles/PriceChart.css';
 
 const PriceChart = ({ coinID }) => {
+  const timeframes = [
+    ['1H', '1&interval=5minute'],
+    ['24H', '1&interval=5minute'],
+    ['7D', '7&interval=hourly'],
+    ['1M', '30&interval=daily'],
+    ['3M', '90&interval=daily'],
+    ['1Y', '365&interval=weekly'],
+    ['MAX', 'max'],
+  ];
   const w = window.innerWidth < 425 ? window.innerWidth : 425;
   const h = w * 0.6;
   const p = 36;
   const svg = d3.select('svg');
   const [prices, setPrices] = useState(null);
-  const [timeframe, setTimeframe] = useState(['24H', 1]);
+  const [timeframe, setTimeframe] = useState(timeframes[1]);
   const [tooltipData, setTooltipData] = useState(null);
 
   const handleMouseMove = useCallback(
@@ -91,16 +100,6 @@ const PriceChart = ({ coinID }) => {
         .x((d) => xScale(d[0]))
         .y((d) => yScale(d[1])));
   }, [prices, w, timeframe]);
-
-  const timeframes = [
-    ['1H', '1&interval=5minute'],
-    ['24H', '1&interval=5minute'],
-    ['7D', '7&interval=hourly'],
-    ['1M', '30&interval=daily'],
-    ['3M', '90&interval=daily'],
-    ['1Y', '365&interval=weekly'],
-    ['MAX', 'max'],
-  ];
 
   return (
     <>
