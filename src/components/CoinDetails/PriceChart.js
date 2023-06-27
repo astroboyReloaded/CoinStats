@@ -32,10 +32,20 @@ const PriceChart = ({ coinID }) => {
     [prices, w],
   );
 
+  const numberOfIntervals = useCallback((d) => {
+    if (timeframe[0] === '1H') {
+      return d.filter((p, i) => i >= d.length - 15);
+    }
+    if (timeframe[0] === '3M') {
+      return d.filter((p, i) => i >= d.length - 60);
+    }
+    return d;
+  });
+
   useEffect(() => {
     d3.json(`https://api.coingecko.com/api/v3/coins/${coinID}/market_chart?vs_currency=usd&days=${timeframe[1]}`)
       .then((data) => {
-        setPrices(data.prices);
+        setPrices(numberOfIntervals(data.prices));
       });
   }, [coinID, timeframe]);
 
@@ -84,7 +94,7 @@ const PriceChart = ({ coinID }) => {
 
   const timeframes = [
     ['1H', '1&interval=5minute'],
-    ['24H', '1&interval=hourly'],
+    ['24H', '1&interval=5minute'],
     ['7D', '7&interval=hourly'],
     ['1M', '30&interval=daily'],
     ['3M', '90&interval=daily'],
