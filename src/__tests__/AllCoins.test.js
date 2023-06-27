@@ -1,12 +1,10 @@
 import renderer from 'react-test-renderer';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { render, screen } from '@testing-library/react';
 import store from '../redux/store';
-import AllCoins from '../components/AllCoins';
-import GlobalData from '../components/GlobalData';
-import SearchBar from '../components/SearchBar';
-import { fetchAllCoins } from '../redux/all-coins/allCoinsSlice';
+import AllCoins from '../components/AllCoins/AllCoins';
+import GlobalData from '../components/AllCoins/GlobalData';
+import SearchBar from '../components/AllCoins/SearchBar';
 
 it('renders AllCoins component', () => {
   const tree = renderer
@@ -14,7 +12,9 @@ it('renders AllCoins component', () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path="/" element={<AllCoins />} />
+            <Route path="/">
+              <Route index element={<AllCoins />} />
+            </Route>
           </Routes>
         </Provider>
       </BrowserRouter>,

@@ -1,11 +1,42 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders <SearchBar> and <GlobalData> components 1`] = `
-<p
-  className="All-Loading"
+<div
+  className="boxes"
 >
-  Loading...
-</p>
+  <div
+    className="box"
+  >
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+  <div
+    className="box"
+  >
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+  <div
+    className="box"
+  >
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+  <div
+    className="box"
+  >
+    <div />
+    <div />
+    <div />
+    <div />
+  </div>
+</div>
 `;
 
 exports[`renders AllCoins component 1`] = `"All Coins"`;
